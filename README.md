@@ -1,14 +1,13 @@
 # covidAPI
 
-# 1) To use Java and build a live application using latest technology, 
-framework and design
+# 1) To use Java and build a live application using latest technology, framework and design
 						
 # 2) To build a Java application with automation and Dev Ops (Developement Operation) Environment
 				
 # 3) To build application with Microservices Design as API Restful Services provider				
 
 # 4) To build an application with live example which is integration with 
-Covid API services - https://covid-19-apis.postman.com/
+# Covid API services - https://covid-19-apis.postman.com/
 
 # 5) To build and deploy JEE application on simulation server from end to end
 
