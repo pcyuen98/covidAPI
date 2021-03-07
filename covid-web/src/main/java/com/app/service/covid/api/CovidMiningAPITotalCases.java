@@ -2,7 +2,6 @@ package com.app.service.covid.api;
 
 import java.util.List;
 
-import com.app.entity.CovidCasesAreaEntity;
 import com.app.model.CovidCasesArea;
 
 public interface CovidMiningAPITotalCases {

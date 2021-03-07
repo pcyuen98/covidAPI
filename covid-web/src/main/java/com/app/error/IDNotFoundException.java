@@ -1,8 +1,5 @@
 package com.app.error;
 
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
 public class IDNotFoundException extends RuntimeException {
 	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(IDNotFoundException.class);
 	/**

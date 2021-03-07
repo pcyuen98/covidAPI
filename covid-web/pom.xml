@@ -15,12 +15,6 @@
 		<version>2.1.2.RELEASE</version>
 	</parent>
 
-	<properties>
-		<java.version>1.8</java.version>
-		<downloadSources>true</downloadSources>
-		<downloadJavadocs>true</downloadJavadocs>
-	</properties>
-
 	<dependencies>
 
 
@@ -118,7 +112,7 @@
 			<plugin>
 				<groupId>org.eclipse.m2e</groupId>
 				<artifactId>lifecycle-mapping</artifactId>
-				<version>1.0.0</version>
+
 				<configuration>
 					<lifecycleMappingMetadata>
 
