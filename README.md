@@ -3,6 +3,7 @@
 </p>
 
 <p align="center">
+  <h1> CovidAPI2 <h1> 
   <img width="460" height="300" src="/pic/JEE.jpg">
 </p>
 
