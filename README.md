@@ -1,7 +1,5 @@
 <p align="center">
-  <b>COVID API</b>
-  
-  <br><br><br>
+
   <img width="460" height="300" src="/pic/JEE.jpg">
 </p>
 
