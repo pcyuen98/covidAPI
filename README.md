@@ -1,4 +1,6 @@
-# CovidAPI 
+<p align="center">
+<h1> CovidAPI <h2> 
+</p>
 
 <p align="center">
   <img width="460" height="300" src="/pic/JEE.jpg">
