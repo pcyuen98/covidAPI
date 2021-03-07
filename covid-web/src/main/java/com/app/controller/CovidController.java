@@ -19,7 +19,6 @@ public class CovidController {
 	@Autowired
 	private CovidService covidService;
 
-	// Find
 	@GetMapping(GET_COVID)
 	List<CovidCasesArea> findAll() {
 		log.info("findAll() started");
