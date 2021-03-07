@@ -1,0 +1,11 @@
+[Unit]
+Description=Bayi Bot Mining
+After=syslog.target
+
+[Service]
+User=myapp
+ExecStart=/home/bayibot/bayibot/bayi-api-mining/target/bayi-api-mining-0.1.jar
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target
