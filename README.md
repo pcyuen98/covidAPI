@@ -1,5 +1,6 @@
 # CovidAPI 
 <b>
+
 1) To use Java and build a live application using latest technology, framework and design
 					
 2) To build a Java application with automation and Dev Ops (Developement Operation) Environment
@@ -10,6 +11,7 @@
 Covid API services - https://covid-19-apis.postman.com/
 
 5) To build and deploy JEE application on simulation server from end to end
+
 </b>
 
 # Create your first Git Hub
