@@ -1,19 +1,8 @@
 <p align="center">
-<h1> CovidAPI <h1> 
-</p>
-
-<p align="center">
-  <h1> CovidAPI2 <h1> 
+  <b>COVID API</b>
+  
+  <br><br><br>
   <img width="460" height="300" src="/pic/JEE.jpg">
-</p>
-
-<p align="center">
-  <b>Some Links:</b><br>
-  <a href="#">Link 1</a> |
-  <a href="#">Link 2</a> |
-  <a href="#">Link 3</a>
-  <br><br>
-  <img src="http://s.4cdn.org/image/title/105.gif">
 </p>
 
 <b>
