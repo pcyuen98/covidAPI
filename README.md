@@ -1,4 +1,9 @@
 # CovidAPI 
+
+<p align="center">
+  <img width="460" height="300" src="/pic/JEE.jpg">
+</p>
+
 <b>
 
 1) To use Java and build a live application using latest technology, framework and design
