@@ -1,5 +1,5 @@
 <p align="center">
-<h1> CovidAPI <h2> 
+<h1> CovidAPI <h1> 
 </p>
 
 <p align="center">
