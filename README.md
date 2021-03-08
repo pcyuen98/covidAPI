@@ -21,12 +21,12 @@ Covid API services - https://covid-19-apis.postman.com/
 
 </b>
 
-# Create your first Git Hub
-https://docs.google.com/document/d/1ohb52xOEZTbvAtgYo-haXdCednwa-4Gc/edit#
+# Manual A - Create your first Git Hub
+https://docs.google.com/document/d/1ohb52xOEZTbvAtgYo-haXdCednwa-4Gc/edit#heading=h.pscfpgrh5zta
 
 # Configure Your environment
 
-# Configure JDK, Maven, Eclipse, Download and Configure Maven Covid API Project
+# Manual B - Configure JDK, Maven, Eclipse, Download and Configure Maven Covid API Project
 https://docs.google.com/document/d/1sLfvVACVJ4OOEcmhOS1gB8iS8V5IvMSlWWalOY_4WCM/edit
 
 https://docs.google.com/document/d/1sLfvVACVJ4OOEcmhOS1gB8iS8V5IvMSlWWalOY_4WCM/edit#
