@@ -1,5 +1,6 @@
 package com.app.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.app.entity.CovidAreaDescEntity;
+import com.app.entity.CovidCasesAreaEntity;
 import com.app.model.CovidCasesArea;
+import com.app.repository.covid.CovidCasesRepository;
 import com.app.service.covid.CovidService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -18,12 +22,19 @@ public class CovidController {
 
 	private final static String GET_COVID = "/covid/get";
 
+	private final static String ADD_COVID = "/covid/add";
+
+	private final static String DELETE_COVID = "/covid/delete";
+
 	private final static String GET_HELLO_API = "/covid/hello";
 
 	private final static String GET_LOG_API = "/covid/logging";
 
 	@Autowired
 	private CovidService covidService;
+
+	@Autowired
+	private CovidCasesRepository covidCasesRepository;
 
 	@GetMapping(GET_COVID)
 	List<CovidCasesArea> findAll() {
@@ -39,8 +50,6 @@ public class CovidController {
 		log.info(GET_COVID + "  return = {}" + covidCasesAreas);
 		return covidCasesAreas;
 	}
-
-
 
 	// TODO: Practical 1 - Complete the API below
 	// It should return hello when you hit http://localhost:8081/covid/hello on
@@ -66,5 +75,35 @@ public class CovidController {
 			Integer.parseInt(aNumberOnly);
 		}
 		return "you have input =>" + aNumberOnly;
+	}
+
+	// TODO: Practical 4
+	// Move the logic below under try/catch area to CovidServiceImpl
+	@GetMapping(ADD_COVID)
+	String addCovid() {
+		log.info("addCovid() started");
+		String strReturn = null;
+
+		try {
+
+			List<CovidCasesAreaEntity> cases = covidCasesRepository.findAll();
+			CovidCasesAreaEntity covidCasesAreaEntity = cases.get(0);
+			CovidCasesAreaEntity covidCasesAreaEntityNew = new CovidCasesAreaEntity();
+
+			covidCasesAreaEntityNew.setArea(covidCasesAreaEntity.getArea());
+			covidCasesAreaEntityNew.setDate(new Date());
+
+			CovidAreaDescEntity covidAreaDescEntity = new CovidAreaDescEntity();
+
+			covidAreaDescEntity.setDescription("!");
+
+			covidCasesRepository.save(covidCasesAreaEntityNew);
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			log.error("add() exception " + e.getMessage());
+		}
+
+		return strReturn;
 	}
 }

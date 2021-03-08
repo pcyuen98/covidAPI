@@ -45,4 +45,12 @@ public class CovidServiceImpl implements CovidService {
 		return covidCasesAreaList;
 
 	}
+	
+	@Override
+	public List<CovidCasesArea> addCovid() {
+		log.info("addCovid started");
+		
+		return covidCasesAreaList;
+
+	}
 }
