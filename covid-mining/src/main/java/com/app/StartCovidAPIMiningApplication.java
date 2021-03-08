@@ -30,7 +30,7 @@ public class StartCovidAPIMiningApplication {
 			if (beanName.indexOf("bayi") > -1) {
 				log.info("configured service name:={}", beanName);
 			}
-			//System.out.println(new Country().getCountryName()); // Remark by Rahim 8
+
 		}
 
 

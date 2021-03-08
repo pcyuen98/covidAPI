@@ -37,8 +37,7 @@ public class MyCovidController {
 		log.info(MINING_MY_COVID + " return = {}" + strReturn);
 		return strReturn;
 	}
-	
-	// TODO: Rahim Return last 5 records
+
 	@GetMapping(GET_MY_LAST_5_COVID) 
 	 List<CovidCasesArea> getLast5Records() throws Exception {
 		log.info("getLast5Records() started");

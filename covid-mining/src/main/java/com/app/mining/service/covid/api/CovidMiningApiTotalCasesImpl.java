@@ -153,7 +153,6 @@ public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 		return json;
 	}
 
-	// TODO: Rahim please complete this
 	@Override
 	public List<CovidCasesAreaEntity>  getLast5RecordsMY() throws Exception {
 		// TODO Auto-generated method stub
