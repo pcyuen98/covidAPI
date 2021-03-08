@@ -1,4 +1,9 @@
-# Covid API
+1. Architect Enterprise Applications with Java EE (Microservices with Spring Boot) - 15-19 March
+2. Developing Applications for the Java EE Platform (Angular and Single Page Application)  - 25 - 29 March
+3. Java Performance Tuning and Optimization (Java Collection Class, Web Services, performance Tuning) - 1,2,5 April
+
+# 5 DAYS Architect Enterprise Applications with Java EE (Microservices with Spring Boot)
+
 <p align="center">
 
   <img width="460" height="300" src="/pic/JEE.jpg">
@@ -21,10 +26,14 @@ Covid API services - https://covid-19-apis.postman.com/
 
 </b>
 
-# Create your first Git Hub
-https://docs.google.com/document/d/1ohb52xOEZTbvAtgYo-haXdCednwa-4Gc/edit#
+# Manual A - Create your first Git Hub
+https://docs.google.com/document/d/1ohb52xOEZTbvAtgYo-haXdCednwa-4Gc/edit#heading=h.pscfpgrh5zta
 
 # Configure Your environment
+
+# Manual B - Configure JDK, Maven, Eclipse, Download and Configure Maven Covid API Project
+https://docs.google.com/document/d/1sLfvVACVJ4OOEcmhOS1gB8iS8V5IvMSlWWalOY_4WCM/edit
+
 https://docs.google.com/document/d/1sLfvVACVJ4OOEcmhOS1gB8iS8V5IvMSlWWalOY_4WCM/edit#
 
 
