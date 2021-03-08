@@ -1,3 +1,7 @@
+1. Architect Enterprise Applications with Java EE (Microservices with Spring Boot) - 15-19 March
+2. Developing Applications for the Java EE Platform (Angular and Single Page Application)  - 25 - 29 March
+3. Java Performance Tuning and Optimization (Java Collection Class, Web Services, performance Tuning) - 1,2,5 April
+
 # 5 DAYS Architect Enterprise Applications with Java EE (Microservices with Spring Boot)
 
 <p align="center">
