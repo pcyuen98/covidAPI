@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.service.covid.api.CovidMiningAPITotalCases;
@@ -17,6 +18,10 @@ public class MyCovidController {
 
 	private final static String GET_MY_LAST_5_COVID = "/covid/get5/my";
 
+	private final static String GET_HELLO_API = "/covid/hello";
+
+	private final static String GET_LOG_API = "/covid/logging";
+
 	private final static String MINING_MY_COVID = "/covid/mining/my";
 
 	@Autowired
@@ -26,7 +31,7 @@ public class MyCovidController {
 	String mining() {
 		log.info("mining() started");
 		String strReturn = null;
-		
+
 		try {
 			strReturn = covidMiningAPITotalCases.doMining();
 		} catch (Exception e) {
@@ -38,12 +43,38 @@ public class MyCovidController {
 		return strReturn;
 	}
 
-	@GetMapping(GET_MY_LAST_5_COVID) 
-	 List<CovidCasesArea> getLast5Records() throws Exception {
+	@GetMapping(GET_MY_LAST_5_COVID)
+	List<CovidCasesArea> getLast5Records() throws Exception {
 		log.info("getLast5Records() started");
-		
-		log.info("getLast5Records() ends. It supposes to return last 5 records from listLast5Records(). (CovidCasesRepository)");
+
+		log.info(
+				"getLast5Records() ends. It supposes to return last 5 records from listLast5Records(). (CovidCasesRepository)");
 		return covidMiningAPITotalCases.getLast5RecordsMY();
+	}
+
+	// TODO: Practical 1 - Complete the API below
+	// It should return hello when you hit http://localhost:8081/covid/hello on
+	// browser
+
+	@GetMapping(GET_HELLO_API)
+	String getHello() throws Exception {
+		log.info("getHello() started");
+
+		return "Hello API";
+	}
+
+	// TODO: Practical 2 - Capture the error message below from log file
+	// It should return some error when you pass a string as parameter to the HTTP get
+	// Example, http://localhost:8081/covid/hello?aNumberOnly=string  
+
+	@GetMapping(GET_LOG_API)
+	String getLogging(@RequestParam String aNumberOnly) throws Exception {
+		log.info("getLogging() started, requestParamvalue={}", aNumberOnly);
+
+		if (aNumberOnly != null) {
+			Integer.parseInt(aNumberOnly);
+		}
+		return "you have input =>" + aNumberOnly;
 	}
 
 }
