@@ -25,6 +25,10 @@ Covid API services - https://covid-19-apis.postman.com/
 https://docs.google.com/document/d/1ohb52xOEZTbvAtgYo-haXdCednwa-4Gc/edit#
 
 # Configure Your environment
+
+# Configure JDK, Maven, Eclipse, Download and Configure Maven Covid API Project
+https://docs.google.com/document/d/1sLfvVACVJ4OOEcmhOS1gB8iS8V5IvMSlWWalOY_4WCM/edit
+
 https://docs.google.com/document/d/1sLfvVACVJ4OOEcmhOS1gB8iS8V5IvMSlWWalOY_4WCM/edit#
 
 
