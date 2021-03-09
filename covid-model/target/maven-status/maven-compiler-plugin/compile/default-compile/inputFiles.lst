@@ -1,5 +1,6 @@
 C:\workspace\covidAPI\covid-model\src\main\java\com\app\model\CovidCasesArea.java
 C:\workspace\covidAPI\covid-model\src\main\java\com\app\entity\StateEntity.java
+C:\workspace\covidAPI\covid-model\src\main\java\com\app\error\IDNotFoundException.java
 C:\workspace\covidAPI\covid-model\src\main\java\com\app\entity\CovidCasesCountryEntity.java
 C:\workspace\covidAPI\covid-model\src\main\java\com\app\util\BayiBotDefaultConstant.java
 C:\workspace\covidAPI\covid-model\src\main\java\com\app\entity\CovidAreaDescEntity.java

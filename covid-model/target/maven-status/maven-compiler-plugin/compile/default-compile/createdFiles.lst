@@ -10,6 +10,7 @@ com\app\mapper\CovidCasesAreaMapper.class
 com\app\entity\AreaEntity.class
 com\app\entity\CovidCasesCountryEntity.class
 com\app\mapper\CountryMapper.class
+com\app\error\IDNotFoundException.class
 com\app\util\DateTools.class
 com\app\entity\CovidCasesAreaEntity.class
 com\app\model\State.class

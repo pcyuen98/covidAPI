@@ -18,8 +18,6 @@
     <module>covid-web</module>
      
       
-    <module>lifecycle-mapping</module>
-      
   </modules>
       
   <build>
