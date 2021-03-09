@@ -32,8 +32,7 @@ public class CovidServiceImpl implements CovidService {
 		if (covidCaseEntities == null) {
 			throw new IDNotFoundException(0L);
 		} else {
-			
-	
+
 			for (CovidCasesAreaEntity covidCasesEntity : covidCaseEntities) {
 				CovidCasesArea covidCasesArea = mapper.asResource(covidCasesEntity);
 				covidCasesAreaList.add(covidCasesArea);
@@ -45,12 +44,12 @@ public class CovidServiceImpl implements CovidService {
 		return covidCasesAreaList;
 
 	}
-	
+
 	@Override
 	public List<CovidCasesArea> addCovid() {
 		log.info("addCovid started");
-		
-		return covidCasesAreaList;
+
+		return null;
 
 	}
 }
