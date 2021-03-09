@@ -43,6 +43,8 @@ https://docs.google.com/document/d/1cQHPBTt2D9EjtZ4GjKFXegZrSZNb2354bN-8ICMW52g/
 
 
 # Application HTTP Get URL
+Get Latest Covid Cases 
+http://localhost:8081/covid/get/latest
 
 Get total Covid Cases
 http://localhost:8081/covid/get
