@@ -5,13 +5,9 @@ import java.util.Arrays;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Import;
-
-import com.app.mining.repository.DefaultMasterBeanData;
 
 import lombok.extern.slf4j.Slf4j;
 
-@Import({ DefaultMasterBeanData.class })
 @SpringBootApplication(scanBasePackages = { "com.app.mining.repository", "com.app.mining.controller",
 		"com.app.entity","com.app.mining.service"})
 @Slf4j
