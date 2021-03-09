@@ -1,4 +1,5 @@
 C:\workspace\covidAPI\covid-model\src\main\java\com\app\model\CovidCasesArea.java
+C:\workspace\covidAPI\covid-model\src\main\java\com\app\model\CovidCasesDesc.java
 C:\workspace\covidAPI\covid-model\src\main\java\com\app\entity\StateEntity.java
 C:\workspace\covidAPI\covid-model\src\main\java\com\app\error\IDNotFoundException.java
 C:\workspace\covidAPI\covid-model\src\main\java\com\app\entity\CovidCasesCountryEntity.java
@@ -9,6 +10,7 @@ C:\workspace\covidAPI\covid-model\src\main\java\com\app\entity\CovidCasesAreaEnt
 C:\workspace\covidAPI\covid-model\src\main\java\com\app\entity\CountryEntity.java
 C:\workspace\covidAPI\covid-model\src\main\java\com\app\model\State.java
 C:\workspace\covidAPI\covid-model\src\main\java\com\app\model\api\Covid19ApiModel.java
+C:\workspace\covidAPI\covid-model\src\main\java\com\app\mapper\CovidAreaDescMapper.java
 C:\workspace\covidAPI\covid-model\src\main\java\com\app\mapper\CovidCasesAreaMapper.java
 C:\workspace\covidAPI\covid-model\src\main\java\com\app\model\Area.java
 C:\workspace\covidAPI\covid-model\src\main\java\com\app\model\Country.java
