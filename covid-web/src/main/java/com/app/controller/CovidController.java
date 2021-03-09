@@ -13,12 +13,15 @@ import com.app.entity.CovidCasesAreaEntity;
 import com.app.model.CovidCasesArea;
 import com.app.repository.covid.CovidCasesRepository;
 import com.app.service.covid.CovidService;
+import com.app.service.covid.api.CovidMiningAPITotalCases;
 
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @Slf4j
 public class CovidController {
+
+	private final static String GET_LATEST_COVID_FROM_DB = "/covid/get/latest";
 
 	private final static String GET_COVID = "/covid/get";
 
@@ -35,6 +38,25 @@ public class CovidController {
 
 	@Autowired
 	private CovidCasesRepository covidCasesRepository;
+
+	@Autowired
+	CovidMiningAPITotalCases covidMiningAPITotalCases;
+
+	@GetMapping(GET_LATEST_COVID_FROM_DB)
+	String getLatest() {
+		log.info("getLatest() started");
+		String returnString = null;
+
+		try {
+			returnString = covidMiningAPITotalCases.getTotalfromDB();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			log.error(" getLatest() exception " + e.getMessage());
+		}
+
+		log.info(GET_LATEST_COVID_FROM_DB + "  return = {}" + returnString);
+		return returnString;
+	}
 
 	@GetMapping(GET_COVID)
 	List<CovidCasesArea> findAll() {

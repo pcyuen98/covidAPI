@@ -51,20 +51,13 @@ public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 		String json = getTotalCasesMYFromAPI(defaultDate, defaultTime, date1DayBefore, date3DayBefore);
 
 		List<Covid19ApiModel> covid19ApiModels = convertToObjects(json);
-		
-		for (Covid19ApiModel covid19ApiModel: covid19ApiModels) {
-			
-			if (covid19ApiModel.getCases() == 283569) {
-				covid19ApiModel.setCases(285716);
-			}
-		}
 
 		updateDB(covid19ApiModels);
 
 		int totalCases = getCasesDifferent(covid19ApiModels);
 
 		log.info("convertToObjects Ends. Total Cases = {} ({})", totalCases, date1DayBefore.toString());
-		totalCases = 2468;
+
 		return "Total Cases " + totalCases + " (" + date1DayBefore.toString() + ")";
 
 	}
@@ -78,7 +71,7 @@ public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 			Format formatter = new SimpleDateFormat(API_DATE_FORMAT);
 			String convertedDate = formatter.format(covidCasesAreaEntity.getDate());
 
-			log.info("api date='{}' , entity date='{}' , cases = {}", covid19ApiModel.getDate(), convertedDate, covidCasesAreaEntity.getCases());
+			log.info("api date='{}' , entity date='{}'", covid19ApiModel.getDate(), convertedDate);
 
 			if (convertedDate.equals(covid19ApiModel.getDate())) {
 				log.info("is matched");
@@ -95,7 +88,7 @@ public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 	private void updateDB(List<Covid19ApiModel> covid19ApiModels) throws ParseException {
 
 		List<CovidCasesAreaEntity> covidCasesAreaEntities = covidCasesRepository.listLast5Records();
-		log.info("updateDB covidCasesAreaEntities={}" + covidCasesAreaEntities);
+
 		for (Covid19ApiModel covid19ApiModel : covid19ApiModels) {
 			covid19ApiModel.getDate();
 
@@ -116,17 +109,12 @@ public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 	}
 
 	private int getCasesDifferent(List<Covid19ApiModel> covid19ApiModels) {
-		int totalCases = 0;
-		log.info("getCasesDifferent covid19ApiModels= {} ", covid19ApiModels);
+		Covid19ApiModel first = covid19ApiModels.get(0);
+		Covid19ApiModel last = covid19ApiModels.get(1);
 
-		if (covid19ApiModels.size() >= 2) {
-			Covid19ApiModel first = covid19ApiModels.get(covid19ApiModels.size() - 2);
-			Covid19ApiModel last = covid19ApiModels.get(covid19ApiModels.size() - 1);
+		log.info("first cases ={}, last cases= {} ", first.getCases(), last.getCases());
 
-			log.info("first cases ={}, last cases= {} ", first.getCases(), last.getCases());
-
-			totalCases = last.getCases() - first.getCases();
-		}
+		int totalCases = last.getCases() - first.getCases();
 
 		return totalCases;
 
@@ -186,4 +174,38 @@ public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 		return casesPojos;
 	}
 
+	@Override
+	public String getTotalfromDB() throws Exception {
+		log.info("getTotalfromDB starts. ");
+		List<CovidCasesAreaEntity> casesEntities = covidCasesRepository.listLast2Records();
+		log.info("getTotalfromDB casesEntities size ={} ", casesEntities.size());
+		
+		int totalCases = 0;
+		String date = "";
+		if (!casesEntities.isEmpty()) {
+			List<Covid19ApiModel> covidApiModels = new ArrayList<Covid19ApiModel>();
+
+			CovidCasesAreaEntity covidCasesAreaEntity = casesEntities.get(1);
+			log.info("getTotalfromDB Last covidCasesAreaEntity date={}, cases={}", covidCasesAreaEntity.getDate(),
+					covidCasesAreaEntity.getCases());
+
+			Covid19ApiModel covid19ApiModel = new Covid19ApiModel();
+			covid19ApiModel.setCases(covidCasesAreaEntity.getCases());
+			covidApiModels.add(covid19ApiModel);
+
+			covidCasesAreaEntity = casesEntities.get(0);
+			log.info("getTotalfromDB covidCasesAreaEntity date={}, cases={}", covidCasesAreaEntity.getDate(),
+					covidCasesAreaEntity.getCases());
+			date = covidCasesAreaEntity.getDate().toString();
+			covid19ApiModel = new Covid19ApiModel();
+			covid19ApiModel.setCases(covidCasesAreaEntity.getCases());
+			covidApiModels.add(covid19ApiModel);
+			totalCases = getCasesDifferent(covidApiModels);
+		}
+
+		
+		
+		log.info("getTotalfromDB ends.  totalCases = {} date={}", totalCases,date);
+		return "Total Cases " + totalCases + " (" + date + ")";
+	}
 }
