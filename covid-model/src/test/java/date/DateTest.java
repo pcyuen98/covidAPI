@@ -48,11 +48,7 @@ class DateTest {
 	@Test
 	void testConvertDateFormat() throws ParseException {
 		String dateString = "2020-12-19T00:00:00Z";
-		
-		String defaultFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'";
-
-		SimpleDateFormat sdf = new SimpleDateFormat(defaultFormat);
-		
+	
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		
 		Date date = simpleDateFormat.parse(dateString);

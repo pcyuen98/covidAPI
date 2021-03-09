@@ -45,9 +45,18 @@ public class CovidServiceImpl implements CovidService {
 
 	}
 
+	// TODO: Related to Practical 4 (Add)
 	@Override
 	public List<CovidCasesArea> addCovid() {
 		log.info("addCovid started");
+
+		return null;
+
+	}
+
+	// TODO: Related to Practical 4 (Delete)
+	public List<CovidCasesArea> deleteCovid() {
+		log.info("deleteCovid started");
 
 		return null;
 
