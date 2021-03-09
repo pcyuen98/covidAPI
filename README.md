@@ -43,3 +43,6 @@ https://docs.google.com/document/d/1cQHPBTt2D9EjtZ4GjKFXegZrSZNb2354bN-8ICMW52g/
 
 Get total Covid Cases
 http://localhost:8081/covid/get
+
+Mining API
+http://localhost:8081/covid/mining/my
