@@ -49,6 +49,12 @@ http://localhost:8081/covid/get/latest
 Get total Covid Cases
 http://localhost:8081/covid/get
 
+Add A Record on Description Table
+http://localhost:8081/covid/add
+
+Delete A Record on Description Table
+http://localhost:8081/covid/delete?id=1
+
 Mining API
 http://localhost:8081/covid/mining/my
 
