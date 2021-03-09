@@ -35,4 +35,11 @@ https://docs.google.com/document/d/1sLfvVACVJ4OOEcmhOS1gB8iS8V5IvMSlWWalOY_4WCM/
 # Manual C - Configure Covid Apps With VM
 https://docs.google.com/document/d/1rw0uv0jHWLHhjP-Tt9gSJoZA26xav5csF7EshvVLFKo/edit?usp=sharing
 
+# Assessment, writing code and Test 
+https://docs.google.com/document/d/1cQHPBTt2D9EjtZ4GjKFXegZrSZNb2354bN-8ICMW52g/edit?usp=sharing
+
+
+# Application HTTP Get URL
+
+Get total Covid Cases
 http://localhost:8081/covid/get
