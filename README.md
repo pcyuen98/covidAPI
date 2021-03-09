@@ -51,3 +51,6 @@ http://localhost:8081/covid/get
 
 Mining API
 http://localhost:8081/covid/mining/my
+
+Mining API (Loose Couple)
+http://localhost:8091/covid/mining/my
