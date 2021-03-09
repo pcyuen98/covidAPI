@@ -35,6 +35,9 @@ https://docs.google.com/document/d/1sLfvVACVJ4OOEcmhOS1gB8iS8V5IvMSlWWalOY_4WCM/
 # Manual C - Configure Covid Apps With VM
 https://docs.google.com/document/d/1rw0uv0jHWLHhjP-Tt9gSJoZA26xav5csF7EshvVLFKo/edit?usp=sharing
 
+# Manual D - How to commit codes to Git HUb
+https://drive.google.com/file/d/1iQhKMmc7rD18sQNb_DMk8n83BSduL1Y8/view?usp=sharing
+
 # Assessment, writing code and Test 
 https://docs.google.com/document/d/1cQHPBTt2D9EjtZ4GjKFXegZrSZNb2354bN-8ICMW52g/edit?usp=sharing
 
@@ -43,3 +46,6 @@ https://docs.google.com/document/d/1cQHPBTt2D9EjtZ4GjKFXegZrSZNb2354bN-8ICMW52g/
 
 Get total Covid Cases
 http://localhost:8081/covid/get
+
+Mining API
+http://localhost:8081/covid/mining/my
