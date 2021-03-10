@@ -10,4 +10,6 @@ public class CovidCasesDesc {
 	private Long id;
 
 	private String description;
+	
+	private String extra2;
 }

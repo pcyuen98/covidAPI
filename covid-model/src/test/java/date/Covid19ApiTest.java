@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import java.util.Date;
 import java.util.List;
 
+import org.junit.Ignore;
 import org.junit.jupiter.api.Test;
 
 import com.app.model.api.Covid19ApiModel;
@@ -19,6 +20,7 @@ public class Covid19ApiTest {
 
 	private final static String URL = "https://api.covid19api.com/total/country/malaysia/status/confirmed?from=";
 
+	@Ignore
 	@Test
 	void testURL() throws Exception {
 		StringBuffer urlBuffer = new StringBuffer();
