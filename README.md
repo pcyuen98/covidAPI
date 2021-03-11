@@ -50,7 +50,7 @@ Get total Covid Cases
 http://localhost:8081/covid/get
 
 Add A Record on Description Table
-http://localhost:8081/covid/add
+http://localhost:8081/covid/add?desc=100
 
 Delete A Record on Description Table
 http://localhost:8081/covid/delete?id=1
