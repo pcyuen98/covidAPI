@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -110,7 +111,7 @@ public class CovidController {
 	// TODO: Practical 4 (Add)
 	// Move the logic below under try/catch area to CovidServiceImpl
 	@GetMapping(ADD_COVID)
-	CovidCasesDesc addCovid() {
+	CovidCasesDesc addCovid(@RequestParam(required = true) String desc) {
 		log.info("addCovid() started");
 
 		CovidCasesDesc covidCasesDesc = null;
@@ -125,7 +126,7 @@ public class CovidController {
 
 			CovidAreaDescEntity covidAreaDescEntity = new CovidAreaDescEntity();
 
-			covidAreaDescEntity.setDescription("My Name -->" + "Your Name");
+			covidAreaDescEntity.setDescription(desc);
 
 			CovidAreaDescEntity savedEntity = covidCasesDescRepository.save(covidAreaDescEntity);
 
@@ -142,8 +143,8 @@ public class CovidController {
 
 	// TODO: Practical 4 (Delete)
 	// Move the logic below under try/catch area to CovidServiceImpl
-	@GetMapping(DELETE_COVID)
-	int deleteCovid(@RequestParam(required = false) long id) {
+	@DeleteMapping(DELETE_COVID)
+	int deleteCovid(@RequestParam(required = true) long id) {
 		log.info("deleteCovid() started id={}", id);
 
 		try {
