@@ -12,7 +12,7 @@ import lombok.Setter;
 @Table(name = "trx_covid_cases_desc")
 @Getter
 @Setter
-public class CovidAreaDescEntity {
+public class CovidCasesDescEntity {
 
 	@Id
 	@GeneratedValue

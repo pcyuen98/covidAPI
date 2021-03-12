@@ -1,6 +1,6 @@
 package com.app.mapper;
 
-import com.app.entity.CovidAreaDescEntity;
+import com.app.entity.CovidCasesDescEntity;
 import com.app.model.CovidCasesDesc;
 
 import fr.xebia.extras.selma.IgnoreMissing;
@@ -11,9 +11,9 @@ import fr.xebia.extras.selma.Maps;
 public interface CovidAreaDescMapper {
 
 	@Maps(withIgnoreMissing = IgnoreMissing.ALL)
-	public CovidAreaDescEntity asEntity(CovidCasesDesc covidCasesDesc);
+	public CovidCasesDescEntity asEntity(CovidCasesDesc covidCasesDesc);
 
 	@Maps(withIgnoreMissing = IgnoreMissing.ALL)
-	public CovidCasesDesc asResource(CovidAreaDescEntity covidAreaDescEntity);
+	public CovidCasesDesc asResource(CovidCasesDescEntity covidAreaDescEntity);
 
 }
