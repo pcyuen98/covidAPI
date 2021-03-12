@@ -52,6 +52,9 @@ http://localhost:8081/covid/get
 Add A Record on Description Table
 http://localhost:8081/covid/add?desc=100
 
+Get All on Description Table
+http://localhost:8081/covid/get/desc
+
 Delete A Record on Description Table
 http://localhost:8081/covid/delete?id=1
 
