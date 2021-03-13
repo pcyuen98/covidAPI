@@ -130,6 +130,7 @@ public class CovidController {
 
 	// TODO: Practical 4 (Add)
 	// Move the logic below under try/catch area to CovidServiceImpl
+	// check out the remarks of "TODO: Practical 4 " on CovidServiceImpl
 	@GetMapping(ADD_COVID)
 	CovidCasesDesc addCovid(@RequestParam(required = true) String desc) throws Exception {
 		log.info("addCovid() started={}", desc);
@@ -167,6 +168,7 @@ public class CovidController {
 
 	// TODO: Practical 4 (Delete)
 	// Move the logic below under try/catch area to CovidServiceImpl
+	// check out the remarks of "TODO: Practical 4 " on CovidServiceImpl
 	@DeleteMapping(DELETE_COVID)
 	int deleteCovid(@RequestParam(required = true) long id) throws Exception {
 		log.info("deleteCovid() started id={}", id);
