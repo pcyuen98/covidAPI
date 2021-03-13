@@ -63,3 +63,12 @@ http://localhost:8081/covid/mining/my
 
 Mining API (Loose Couple)
 http://localhost:8091/covid/mining/my
+
+# Useful Debugging Command
+
+How to tail a log file
+tail -f covid.log
+
+How to check postgres DB is running
+telnet localhost 5432
+
