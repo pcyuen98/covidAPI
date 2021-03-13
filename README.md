@@ -42,7 +42,7 @@ https://drive.google.com/file/d/1iQhKMmc7rD18sQNb_DMk8n83BSduL1Y8/view?usp=shari
 https://docs.google.com/document/d/1cQHPBTt2D9EjtZ4GjKFXegZrSZNb2354bN-8ICMW52g/edit?usp=sharing
 
 
-# Application HTTP Get URL
+# Application HTTP URL
 Get Latest Covid Cases 
 http://localhost:8081/covid/get/latest
 
