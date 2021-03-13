@@ -13,6 +13,5 @@ public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 		return null;
 	}
 
-	
 
 }
