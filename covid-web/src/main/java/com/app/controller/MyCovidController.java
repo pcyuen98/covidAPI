@@ -23,7 +23,7 @@ public class MyCovidController {
 	CovidMiningAPITotalCases covidMiningAPITotalCases;
 
 	@GetMapping(MINING_MY_COVID)
-	String mining() {
+	String mining() throws Exception {
 		log.info("mining() started");
 		String strReturn = null;
 
@@ -33,6 +33,7 @@ public class MyCovidController {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			log.error("mining() exception " + e.getMessage());
+			throw new Exception(e);
 		}
 
 		log.info(MINING_MY_COVID + " return = {}" + strReturn);
