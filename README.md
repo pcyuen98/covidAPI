@@ -72,3 +72,6 @@ tail -f covid.log
 How to check postgres DB is running
 telnet localhost 5432
 
+# Appendix
+Group info
+https://docs.google.com/spreadsheets/d/1KtmEnBNoG6VCbFY-vwyTTwWD8x9hgqIG/edit#gid=1140732679
