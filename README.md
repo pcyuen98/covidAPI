@@ -75,3 +75,6 @@ telnet localhost 5432
 # Appendix
 Group info
 https://docs.google.com/spreadsheets/d/1KtmEnBNoG6VCbFY-vwyTTwWD8x9hgqIG/edit#gid=1140732679
+
+Team Meeting
+https://teams.microsoft.com/l/meetup-join/19%3ameeting_NDU2NjIyMTgtODM5NS00NGRmLWIxZmEtYzc2ZmUxNjNmMmZi%40thread.v2/0?context=%7b%22Tid%22%3a%2225d7dc54-54d7-49e1-a6b9-5f3110280617%22%2c%22Oid%22%3a%22e6350384-5c3c-4b56-8fd6-45ea0fa4f2f0%22%7d
