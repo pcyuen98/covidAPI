@@ -22,7 +22,7 @@ public class StartCovidApplication {
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(StartCovidApplication.class, args);
 
-		log.info("Let's inspect the beans provided by Bayi Bot Mining v 0.2");
+		log.info("Let's inspect the beans provided by Bot Mining v 0.2");
 
 		String[] beanNames = ctx.getBeanDefinitionNames();
 		Arrays.sort(beanNames);
