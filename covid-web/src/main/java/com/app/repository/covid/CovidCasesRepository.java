@@ -22,6 +22,5 @@ public interface CovidCasesRepository extends JpaRepository<CovidCasesAreaEntity
 	// Simple SQL Should not use native query as change of db the query syntax need to be changed. 
 	// If use Spring JPQL, the SQL below can be maintained even change of DB
 	
-	@Query(value = "SELECT c from CovidCasesAreaEntity as c order by c.date desc")
 	List<CovidCasesAreaEntity> listLast5RecordsHQL(Pageable pageable);
 }
