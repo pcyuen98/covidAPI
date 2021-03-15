@@ -82,5 +82,5 @@ https://teams.microsoft.com/l/meetup-join/19%3ameeting_NDU2NjIyMTgtODM5NS00NGRmL
 # Presentation Slide
 https://drive.google.com/drive/folders/1fz0aLFDbyehaNu5N4h2BnKm7cin6kasY?usp=sharing
 
-#Lombok Installation (Only Needed when Eclipse Has issue)
-https://drive.google.com/drive/folders/1m19_A6jZTqlIiCfU_B0O1CnGASBo1SFt
+#Lombok Installation (Only Needed when Eclipse has a lot error after Maven Update)
+https://drive.google.com/file/d/10wcjnPbOdNNPgKAz9UFcTF90ogZvROZP/view?usp=sharing
