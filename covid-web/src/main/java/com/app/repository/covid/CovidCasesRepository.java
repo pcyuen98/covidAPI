@@ -3,7 +3,6 @@ package com.app.repository.covid;
 import java.util.List;
 import java.util.UUID;
 
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -22,5 +21,5 @@ public interface CovidCasesRepository extends JpaRepository<CovidCasesAreaEntity
 	// Simple SQL Should not use native query as change of db the query syntax need to be changed. 
 	// If use Spring JPQL, the SQL below can be maintained even change of DB
 	
-	List<CovidCasesAreaEntity> listLast5RecordsHQL(Pageable pageable);
+	//List<CovidCasesAreaEntity> listLast5RecordsHQL(Pageable pageable);
 }

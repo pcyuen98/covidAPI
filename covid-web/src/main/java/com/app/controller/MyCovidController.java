@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.model.CovidCasesArea;
@@ -17,6 +18,8 @@ public class MyCovidController {
 
 	private final static String GET_MY_LAST_5_COVID = "/covid/get5/my";
 
+	private final static String GET_MY_LAST_5_COVID_PARAM = "/covid/get5/withsize";
+	
 	private final static String MINING_MY_COVID = "/covid/mining/my";
 
 	@Autowired
@@ -47,5 +50,14 @@ public class MyCovidController {
 		log.info(
 				"getLast5Records() ends. It supposes to return last 5 records from listLast5Records(). (CovidCasesRepository)");
 		return covidMiningAPITotalCases.getLast5RecordsMY();
+	}
+	
+	@GetMapping(GET_MY_LAST_5_COVID_PARAM)
+	List<CovidCasesArea> getLast5RecordsWithParam(@RequestParam int size) throws Exception {
+		log.info("getLast5RecordsWithParam() started size ={}", size);
+
+		log.info(
+				"getLast5RecordsWithParam() ends. It supposes to return last 5 records from listLast5Records(). (CovidCasesRepository)");
+		return covidMiningAPITotalCases.getLast5RecordsMYWithSize(size);
 	}
 }
