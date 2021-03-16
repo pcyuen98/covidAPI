@@ -38,6 +38,9 @@ https://docs.google.com/document/d/1rw0uv0jHWLHhjP-Tt9gSJoZA26xav5csF7EshvVLFKo/
 # Manual D - How to commit codes to Git HUb
 https://drive.google.com/file/d/1iQhKMmc7rD18sQNb_DMk8n83BSduL1Y8/view?usp=sharing
 
+# Manual E - Postman Configuration
+https://drive.google.com/file/d/1AbvCo08EXhytgbIX4MrQtnR-ybVO3Tns/view?usp=sharing
+
 # Assessment, writing code and Test 
 https://docs.google.com/document/d/1cQHPBTt2D9EjtZ4GjKFXegZrSZNb2354bN-8ICMW52g/edit?usp=sharing
 
