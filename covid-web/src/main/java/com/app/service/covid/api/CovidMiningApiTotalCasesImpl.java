@@ -8,7 +8,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.app.entity.CovidCasesAreaEntity;
@@ -27,6 +31,7 @@ import fr.xebia.extras.selma.Selma;
 import lombok.extern.slf4j.Slf4j;
 
 @Service
+@Transactional
 @Slf4j
 public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 
@@ -161,11 +166,6 @@ public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 	public List<CovidCasesArea> getLast5RecordsMY() throws Exception {
 		// TODO Auto-generated method stub
 
-		// TODO: Practical bonus:
-		// Pageable top5 = PageRequest.of(0, 2);
-		// List<CovidCasesAreaEntity> list =
-		// covidCasesRepository.listLast5RecordsHQL(top5);
-
 		List<CovidCasesAreaEntity> casesEntities = covidCasesRepository.listLast5Records();
 
 		CovidCasesAreaMapper mapper = Selma.builder(CovidCasesAreaMapper.class).build();
@@ -185,10 +185,11 @@ public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 	public List<CovidCasesArea> getLast5RecordsMYWithSize(int size) throws Exception {
 		// TODO Auto-generated method stub
 
-		// TODO: Practical bonus:
-		// Pageable top5 = PageRequest.of(0, size);
+		// TODO: Practical bonus 3:
+
+		Pageable page = PageRequest.of(0, size);
 		// List<CovidCasesAreaEntity> list =
-		// covidCasesRepository.listLast5RecordsHQL(top5);
+		// covidCasesRepository.listLast5RecordsHQL(page);
 
 		// complete the code here as getLast5RecordsMY method
 		List<CovidCasesArea> casesPojos = new ArrayList<CovidCasesArea>();

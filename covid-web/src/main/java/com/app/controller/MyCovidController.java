@@ -52,6 +52,12 @@ public class MyCovidController {
 		return covidMiningAPITotalCases.getLast5RecordsMY();
 	}
 	
+	// TODO: Practical Bonus Desc 3 :
+	// The method below acceping parameter 
+	// complete the getLast5RecordsMYWithSize on covidMiningAPITotalCases
+	// http://localhost:8081/covid/get5/withsize?size=1
+	// Reference - https://howtodoinjava.com/spring-boot2/pagination-sorting-example/
+	
 	@GetMapping(GET_MY_LAST_5_COVID_PARAM)
 	List<CovidCasesArea> getLast5RecordsWithParam(@RequestParam int size) throws Exception {
 		log.info("getLast5RecordsWithParam() started size ={}", size);

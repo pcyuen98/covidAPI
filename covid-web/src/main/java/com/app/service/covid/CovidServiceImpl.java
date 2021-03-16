@@ -8,15 +8,15 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.app.entity.CovidCasesAreaEntity;
+import com.app.entity.CovidCasesDescEntity;
 import com.app.error.IDNotFoundException;
 import com.app.mapper.CovidAreaDescMapper;
 import com.app.mapper.CovidCasesAreaMapper;
-import com.app.repository.covid.CovidCasesDescRepository;
-import com.app.repository.covid.CovidCasesRepository;
-import com.app.entity.CovidCasesDescEntity;
-import com.app.entity.CovidCasesAreaEntity;
 import com.app.model.CovidCasesArea;
 import com.app.model.CovidCasesDesc;
+import com.app.repository.covid.CovidCasesDescRepository;
+import com.app.repository.covid.CovidCasesRepository;
 
 import fr.xebia.extras.selma.Selma;
 
@@ -78,10 +78,22 @@ public class CovidServiceImpl implements CovidService {
 	
 	// TODO: Related to Practical 4 (Add)
 	@Override
-	public List<CovidCasesArea> addCovid() {
+	public CovidCasesDesc addCovid(String desc) {
 		log.info("addCovid started");
+		
+		CovidCasesDesc covidCasesDesc = null;
+		
+		CovidCasesDescEntity covidAreaDescEntity = new CovidCasesDescEntity();
 
-		return null;
+		covidAreaDescEntity.setDescription(desc);
+
+		CovidCasesDescEntity savedEntity = covidCasesDescRepository.save(covidAreaDescEntity);
+
+		CovidAreaDescMapper mapper = Selma.builder(CovidAreaDescMapper.class).build();
+
+		covidCasesDesc = mapper.asResource(savedEntity);
+		
+		return covidCasesDesc;
 
 	}
 

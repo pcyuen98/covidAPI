@@ -8,7 +8,7 @@ import org.springframework.context.ApplicationContext;
 
 import lombok.extern.slf4j.Slf4j;
 
-// TODO: Practical bonus 2: 
+// TODO: Practical bonus Desc 1: 
 // "com.app" scanning whole directory is wastage as it will scan all directories
 // WebConfiguration.java should move to app.com.config package
 // scanning component should change from "com.app" to ""com.app.config"
