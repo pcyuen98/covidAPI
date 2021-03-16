@@ -3,6 +3,8 @@ package com.app.service.covid;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +21,7 @@ import com.app.model.CovidCasesDesc;
 import fr.xebia.extras.selma.Selma;
 
 @Service
-
+@Transactional
 public class CovidServiceImpl implements CovidService {
 
 	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(CovidServiceImpl.class);

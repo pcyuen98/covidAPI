@@ -14,13 +14,14 @@ import com.app.util.ResffulServices;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 
+@Ignore
 public class Covid19ApiTest {
 
 	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(DateTools.class);
 
 	private final static String URL = "https://api.covid19api.com/total/country/malaysia/status/confirmed?from=";
 
-	@Ignore
+	
 	@Test
 	void testURL() throws Exception {
 		StringBuffer urlBuffer = new StringBuffer();
