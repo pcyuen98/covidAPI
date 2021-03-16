@@ -49,6 +49,9 @@ http://localhost:8081/covid/get/latest
 Get total Covid Cases
 http://localhost:8081/covid/get
 
+Hello API
+http://localhost:8081/covid/hello
+
 Add A Record on Description Table
 http://localhost:8081/covid/add?desc=100
 
