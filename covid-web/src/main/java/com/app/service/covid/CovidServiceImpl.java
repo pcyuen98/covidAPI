@@ -35,6 +35,7 @@ public class CovidServiceImpl implements CovidService {
 	@Override
 	public List<CovidCasesArea> getCovid() {
 		log.info("getCovid started");
+		
 		CovidCasesAreaMapper mapper = Selma.builder(CovidCasesAreaMapper.class).build();
 		List<CovidCasesAreaEntity> covidCaseEntities = covidCasesRepository.findAll();
 		List<CovidCasesArea> covidCasesAreaList = new ArrayList<CovidCasesArea>();

@@ -24,7 +24,7 @@ public interface CovidCasesRepository extends JpaRepository<CovidCasesAreaEntity
 	// to be changed.
 	// If use Spring JPQL, the SQL below can be maintained even change of DB
 
-	// reference JPQL (CustomerRepository) -
+	// Hint JPQL (CustomerRepository Class File) -
 	// https://mkyong.com/spring-data/spring-data-add-custom-method-to-repository/
 
 	// JpaRepository vs CrudRepository
