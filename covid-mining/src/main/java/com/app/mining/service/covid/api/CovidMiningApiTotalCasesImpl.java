@@ -9,6 +9,7 @@ public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 	
 	@Override
 	public String doMining() throws Exception {
+		log.info("doMining() started");
 		// TODO Auto-generated method stub
 		return null;
 	}
