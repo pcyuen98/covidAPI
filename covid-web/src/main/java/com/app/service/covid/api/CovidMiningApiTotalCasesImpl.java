@@ -102,9 +102,9 @@ public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 
 			if (!isDuplicate(covidCasesAreaEntities, covid19ApiModel)) {
 				log.info("updateDB this record. covid19ApiModel date={}" + covid19ApiModel.getDate());
-				Date date = DateTools.convertDate(covid19ApiModel.getDate(), API_DATE_FORMAT);
+				Date today = DateTools.convertDate(covid19ApiModel.getDate(), API_DATE_FORMAT);
 
-				covidCasesAreaEntity.setDate(date);
+				covidCasesAreaEntity.setDate(DateTools.convertToLocalDate(today));
 				covidCasesRepository.save(covidCasesAreaEntity);
 			}
 

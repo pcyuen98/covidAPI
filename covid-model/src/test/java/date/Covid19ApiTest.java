@@ -1,6 +1,6 @@
 package date;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Date;
 import java.util.List;
@@ -15,7 +15,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 
 @Ignore
-public class Covid19ApiTest {
+class Covid19ApiTest {
 
 	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(DateTools.class);
 
@@ -66,6 +66,7 @@ public class Covid19ApiTest {
 		int totalCases = last.getCases() - first.getCases();
 
 		log.info("Total Cases = {} ({})", totalCases, date1DayBefore.toString());
-		assertNotNull(totalCases);
+		assertTrue(totalCases != 0);
+
 	}
 }

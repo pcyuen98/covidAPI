@@ -1,6 +1,6 @@
 package com.app.entity;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -30,7 +30,7 @@ public class CovidCasesAreaEntity {
 	private AreaEntity area;
 
 	@Column(nullable = false)
-	private Date date;
+	private LocalDate date;
 	
 	@Column(nullable = false)
 	private int cases;

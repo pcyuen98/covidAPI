@@ -1,6 +1,6 @@
 package com.app.controller;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.app.entity.CovidCasesDescEntity;
 import com.app.entity.CovidCasesAreaEntity;
+import com.app.entity.CovidCasesDescEntity;
 import com.app.mapper.CovidAreaDescMapper;
 import com.app.model.CovidCasesArea;
 import com.app.model.CovidCasesDesc;
@@ -146,7 +146,7 @@ public class CovidController {
 			CovidCasesAreaEntity covidCasesAreaEntityNew = new CovidCasesAreaEntity();
 
 			covidCasesAreaEntityNew.setArea(covidCasesAreaEntity.getArea());
-			covidCasesAreaEntityNew.setDate(new Date());
+			covidCasesAreaEntityNew.setDate(LocalDate.now());
 
 			CovidCasesDescEntity covidAreaDescEntity = new CovidCasesDescEntity();
 

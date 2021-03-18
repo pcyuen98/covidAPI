@@ -1,6 +1,6 @@
 package com.app.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -13,7 +13,7 @@ public class CovidCasesArea {
 
 	private Area area;
 
-	private Date date;
+	private LocalDate date;
 
 	private int cases;
 

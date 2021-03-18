@@ -3,6 +3,7 @@ package com.app.util;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
 
@@ -45,5 +46,15 @@ public class DateTools {
 		log.info("testConvertDateFormat ends. date ={}", date);
 
 		return date;
+	}
+	
+	public static LocalDate convertToLocalDate(Date dateToConvert) {
+	    return LocalDate.ofInstant(
+	      dateToConvert.toInstant(), ZoneId.systemDefault());
+	}
+
+	public static LocalDateTime convertToLocalDateTime(Date dateToConvert) {
+	    return LocalDateTime.ofInstant(
+	      dateToConvert.toInstant(), ZoneId.systemDefault());
 	}
 }
