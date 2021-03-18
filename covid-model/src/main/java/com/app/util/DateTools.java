@@ -10,6 +10,10 @@ public class DateTools {
 
 	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(DateTools.class);
 
+	private DateTools() {
+		    throw new IllegalStateException("Utility class");
+		  }
+
 	public static Date minusDate(int day) {
 
 		LocalDate localDate = LocalDate.now().minusDays(day);
