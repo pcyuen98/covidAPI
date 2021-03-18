@@ -92,7 +92,7 @@ public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 
 	private void updateDB(List<Covid19ApiModel> covid19ApiModels) throws ParseException {
 
-		List<CovidCasesAreaEntity> covidCasesAreaEntities = covidCasesRepository.listLast5Records();
+		List<CovidCasesAreaEntity> covidCasesAreaEntities = covidCasesRepository.listLast5RecordsHQL();
 
 		for (Covid19ApiModel covid19ApiModel : covid19ApiModels) {
 			covid19ApiModel.getDate();
@@ -166,7 +166,7 @@ public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 	public List<CovidCasesArea> getLast5RecordsMY() throws Exception {
 		// TODO Auto-generated method stub
 
-		List<CovidCasesAreaEntity> casesEntities = covidCasesRepository.listLast5Records();
+		List<CovidCasesAreaEntity> casesEntities = covidCasesRepository.listLast5RecordsHQL();
 
 		CovidCasesAreaMapper mapper = Selma.builder(CovidCasesAreaMapper.class).build();
 

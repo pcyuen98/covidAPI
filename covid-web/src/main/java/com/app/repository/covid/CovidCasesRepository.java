@@ -13,8 +13,8 @@ public interface CovidCasesRepository extends JpaRepository<CovidCasesAreaEntity
 	@Query(value = "SELECT DISTINCT c.date, c.cases, c.id, c.fk_area_id FROM trx_covid_cases AS c order by date desc LIMIT 2", nativeQuery = true)
 	List<CovidCasesAreaEntity> listLast2Records();
 
-	@Query(value = "SELECT DISTINCT c.date, c.cases, c.id, c.fk_area_id FROM trx_covid_cases AS c order by date desc LIMIT 5", nativeQuery = true)
-	List<CovidCasesAreaEntity> listLast5Records();
+	//@Query(value = "SELECT DISTINCT c.date, c.cases, c.id, c.fk_area_id FROM trx_covid_cases AS c order by date desc LIMIT 5", nativeQuery = true)
+	//List<CovidCasesAreaEntity> listLast5Records();
 
 	// TODO: Practical Bonus Desc 2
 	// ========================
@@ -30,7 +30,8 @@ public interface CovidCasesRepository extends JpaRepository<CovidCasesAreaEntity
 	// JpaRepository vs CrudRepository
 	// https://stackoverflow.com/questions/14014086/what-is-difference-between-crudrepository-and-jparepository-interfaces-in-spring
 
-	// List<CovidCasesAreaEntity> listLast5RecordsHQL();
+	@Query("SELECT c  FROM CovidCasesAreaEntity AS c order by date desc")
+	List<CovidCasesAreaEntity> listLast5RecordsHQL();
 
 	// TODO: Practical Bonus 3
 	// ========================
