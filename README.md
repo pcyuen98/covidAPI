@@ -70,6 +70,9 @@ http://localhost:8081/covid/mining/my
 Mining API (Loose Couple)
 http://localhost:8091/covid/mining/my
 
+Get Last 5 Records
+http://localhost:8081/covid/get5/my
+
 # Useful Debugging Command
 
 How to tail a log file
