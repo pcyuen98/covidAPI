@@ -110,7 +110,7 @@ public class CovidController {
 	String getHello() throws Exception {
 		log.info("getHello() started");
 
-		return "Hello API";
+		return "Hello API....";
 	}
 
 	// TODO: Practical 2 - Capture the error message below from log file
