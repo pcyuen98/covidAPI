@@ -28,7 +28,7 @@ public class StartCovidApplication {
 		Arrays.sort(beanNames);
 		for (String beanName : beanNames) {
 
-			if (beanName.indexOf("customer") > -1) {
+			if (beanName.indexOf("covid") > -1) {
 				log.info("configured service name:={}", beanName);
 			}
 

@@ -5,10 +5,6 @@ import java.util.List;
 import com.app.model.CovidCasesArea;
 
 public interface CovidMiningAPITotalCases {
-
-	// String getTotalCasesMY() throws Exception;
-
-	String doMining() throws Exception;
 	
 	List<CovidCasesArea> getLast5RecordsMY() throws Exception;
 
