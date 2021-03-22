@@ -105,3 +105,5 @@ covidAPI\covid-model\target\classes\com\app\model
 # Interview Questions
 https://www.javatpoint.com/software-testing-interview-questions
 
+# Soap UI
+https://www.soapui.org/docs/functional-testing/validating-messages/getting-started-with-assertions/
