@@ -107,3 +107,5 @@ https://www.javatpoint.com/software-testing-interview-questions
 
 # Soap UI
 https://www.soapui.org/docs/functional-testing/validating-messages/getting-started-with-assertions/
+
+https://intersog.com/blog/how-to-use-groovy-scripts-in-soapui-for-test-requests/
