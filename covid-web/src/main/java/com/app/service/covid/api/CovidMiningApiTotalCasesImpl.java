@@ -70,7 +70,7 @@ public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 		Covid19ApiModel first = covid19ApiModels.get(0);
 		Covid19ApiModel last = covid19ApiModels.get(1);
 
-		log.info("first cases ={}, last cases= {} ", first.getCases(), last.getCases());
+		//log.info("first cases ={}, last cases= {} ", first.getCases(), last.getCases());
 
 		int totalCases = last.getCases() - first.getCases();
 
@@ -125,9 +125,9 @@ public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 
 	@Override
 	public String getTotalfromDB() throws Exception {
-		log.info("getTotalfromDB starts. ");
+		//log.info("getTotalfromDB starts. ");
 		List<CovidCasesAreaEntity> casesEntities = covidCasesRepository.listLast2Records();
-		log.info("getTotalfromDB casesEntities size ={} ", casesEntities.size());
+		//log.info("getTotalfromDB casesEntities size ={} ", casesEntities.size());
 
 		int totalCases = 0;
 		String date = "";
@@ -135,16 +135,16 @@ public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 			List<Covid19ApiModel> covidApiModels = new ArrayList<Covid19ApiModel>();
 
 			CovidCasesAreaEntity covidCasesAreaEntity = casesEntities.get(1);
-			log.info("getTotalfromDB Last covidCasesAreaEntity date={}, cases={}", covidCasesAreaEntity.getDate(),
-					covidCasesAreaEntity.getCases());
+			//log.info("getTotalfromDB Last covidCasesAreaEntity date={}, cases={}", covidCasesAreaEntity.getDate(),
+			//		covidCasesAreaEntity.getCases());
 
 			Covid19ApiModel covid19ApiModel = new Covid19ApiModel();
 			covid19ApiModel.setCases(covidCasesAreaEntity.getCases());
 			covidApiModels.add(covid19ApiModel);
 
 			covidCasesAreaEntity = casesEntities.get(0);
-			log.info("getTotalfromDB covidCasesAreaEntity date={}, cases={}", covidCasesAreaEntity.getDate(),
-					covidCasesAreaEntity.getCases());
+			//log.info("getTotalfromDB covidCasesAreaEntity date={}, cases={}", covidCasesAreaEntity.getDate(),
+			//		covidCasesAreaEntity.getCases());
 			date = covidCasesAreaEntity.getDate().toString();
 			covid19ApiModel = new Covid19ApiModel();
 			covid19ApiModel.setCases(covidCasesAreaEntity.getCases());
@@ -152,7 +152,7 @@ public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 			totalCases = getCasesDifferent(covidApiModels);
 		}
 
-		log.info("getTotalfromDB ends.  totalCases = {} date={}", totalCases, date);
+		//log.info("getTotalfromDB ends.  totalCases = {} date={}", totalCases, date);
 		return "Total Cases " + totalCases + " (" + date + ")";
 	}
 }

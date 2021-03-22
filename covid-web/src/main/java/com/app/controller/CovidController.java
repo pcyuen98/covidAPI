@@ -7,6 +7,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -41,6 +43,7 @@ public class CovidController {
 
 	private final static String GET_LOG_API = "/covid/logging";
 
+	private final static String PUT_API = "/covid/put";
 	@Autowired
 	private CovidService covidService;
 
@@ -55,7 +58,7 @@ public class CovidController {
 
 	@GetMapping(GET_LATEST_COVID_FROM_DB)
 	String getLatest() throws Exception {
-		log.info("getLatest() started");
+		//log.info("getLatest() started");
 		String returnString = null;
 
 		try {
@@ -66,7 +69,7 @@ public class CovidController {
 			throw new com.app.error.ControllerException(GET_LATEST_COVID_FROM_DB, e.getMessage());
 		}
 
-		log.info(GET_LATEST_COVID_FROM_DB + "  return = {}" + returnString);
+		//log.info(GET_LATEST_COVID_FROM_DB + "  return = {}" + returnString);
 		return returnString;
 	}
 
@@ -108,7 +111,7 @@ public class CovidController {
 
 	@GetMapping(GET_HELLO_API)
 	String getHello() throws Exception {
-		log.info("getHello() started");
+		//log.info("getHello() started");
 
 		return "Hello API....";
 	}
@@ -160,7 +163,7 @@ public class CovidController {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			log.error("add() exception " + e.getMessage());
-			throw new Exception(e.getMessage());
+			throw new com.app.error.ControllerException(ADD_COVID, e.getMessage());
 		}
 
 		return covidCasesDesc;
@@ -192,5 +195,19 @@ public class CovidController {
 		}
 
 		return 0;
+	}
+	
+	// TODO: Angular Practical 7 - Full Stack Application for Covid Put HTTP
+	@PutMapping(PUT_API)
+	CovidCasesDesc putCovid(@RequestBody CovidCasesDesc covidCasesDesc) throws RuntimeException {
+		log.info("putCovid() started, covidCasesDesc={}", covidCasesDesc);
+
+		CovidAreaDescMapper mapper = Selma.builder(CovidAreaDescMapper.class).build();
+		CovidCasesDescEntity covidCasesDescEntity = mapper.asEntity(covidCasesDesc);
+		CovidCasesDescEntity covidCasesDescEntitySaved  = covidCasesDescRepository.save(covidCasesDescEntity);
+		CovidCasesDesc covidCasesDescSaved = mapper.asResource(covidCasesDescEntitySaved);
+		
+		log.info("putCovid() ends, covidCasesDescSaved={}", covidCasesDescSaved);
+		return covidCasesDescSaved;
 	}
 }

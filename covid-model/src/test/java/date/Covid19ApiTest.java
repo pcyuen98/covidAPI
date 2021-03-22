@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import com.app.model.api.Covid19ApiModel;
@@ -21,7 +22,7 @@ class Covid19ApiTest {
 
 	private final static String URL = "https://api.covid19api.com/total/country/malaysia/status/confirmed?from=";
 
-	
+	@Disabled("")
 	@Test
 	void testURL() throws Exception {
 		StringBuffer urlBuffer = new StringBuffer();
