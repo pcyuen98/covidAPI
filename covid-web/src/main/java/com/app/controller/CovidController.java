@@ -4,7 +4,10 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -44,6 +47,9 @@ public class CovidController {
 	private final static String GET_LOG_API = "/covid/logging";
 
 	private final static String PUT_API = "/covid/put";
+	
+	private final static String DELETE_COVID_SOAPUI = "/covid/delete/soap";
+	
 	@Autowired
 	private CovidService covidService;
 
@@ -210,4 +216,18 @@ public class CovidController {
 		log.info("putCovid() ends, covidCasesDescSaved={}", covidCasesDescSaved);
 		return covidCasesDescSaved;
 	}
+	
+	// TODO: Performance Practical 2 - Performance and Functional Testing
+	@DeleteMapping(DELETE_COVID_SOAPUI)
+
+	int deleteCovidSoap(@RequestParam(required = true) String desc) throws Exception {
+		log.info("deleteCovidSoap() started desc={}", desc);
+		
+		covidCasesDescRepository.deleteDescWithCondition(desc);
+		
+		log.info("deleteCovidSoap() ended");
+		return 0;
+	}
+	
+	
 }
