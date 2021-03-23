@@ -208,13 +208,10 @@ public class CovidController {
 	CovidCasesDesc putCovid(@RequestBody CovidCasesDesc covidCasesDesc) throws RuntimeException {
 		log.info("putCovid() started, covidCasesDesc={}", covidCasesDesc);
 
-		CovidAreaDescMapper mapper = Selma.builder(CovidAreaDescMapper.class).build();
-		CovidCasesDescEntity covidCasesDescEntity = mapper.asEntity(covidCasesDesc);
-		CovidCasesDescEntity covidCasesDescEntitySaved  = covidCasesDescRepository.save(covidCasesDescEntity);
-		CovidCasesDesc covidCasesDescSaved = mapper.asResource(covidCasesDescEntitySaved);
+		// complete the implementation below
 		
-		log.info("putCovid() ends, covidCasesDescSaved={}", covidCasesDescSaved);
-		return covidCasesDescSaved;
+		log.info("putCovid() ends, covidCasesDescSaved={}", null);
+		return null;
 	}
 	
 	// TODO: Performance Practical 2 - Performance and Functional Testing
@@ -223,7 +220,7 @@ public class CovidController {
 	int deleteCovidSoap(@RequestParam(required = true) String desc) throws Exception {
 		log.info("deleteCovidSoap() started desc={}", desc);
 		
-		covidCasesDescRepository.deleteDescWithCondition(desc);
+		// complete the implementation below
 		
 		log.info("deleteCovidSoap() ended");
 		return 0;
