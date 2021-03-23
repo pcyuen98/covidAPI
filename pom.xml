@@ -20,7 +20,7 @@
   <modules>
     	    
     <module>covid-model</module>
-            
+    <module>covid-mining</module>        
     <module>covid-web</module>
      
       
