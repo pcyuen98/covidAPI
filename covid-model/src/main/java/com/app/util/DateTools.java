@@ -49,8 +49,7 @@ public class DateTools {
 	}
 	
 	public static LocalDate convertToLocalDate(Date dateToConvert) {
-	    return LocalDate.ofInstant(
-	      dateToConvert.toInstant(), ZoneId.systemDefault());
+		return new java.sql.Date(dateToConvert.getTime()).toLocalDate();
 	}
 
 	public static LocalDateTime convertToLocalDateTime(Date dateToConvert) {
