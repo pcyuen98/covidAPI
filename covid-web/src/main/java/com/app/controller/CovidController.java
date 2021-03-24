@@ -210,7 +210,7 @@ public class CovidController {
 
 		// complete the implementation below
 		
-		log.info("putCovid() ends, covidCasesDescSaved={}", null);
+		//log.info("putCovid() ends, covidCasesDescSaved={}", null);
 		return null;
 	}
 	
