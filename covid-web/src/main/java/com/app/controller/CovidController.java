@@ -211,6 +211,8 @@ public class CovidController {
 		// complete the implementation below
 		
 		//log.info("putCovid() ends, covidCasesDescSaved={}", null);
+		
+		// return should be the Saved CovidCasesDesc with values
 		return null;
 	}
 	
