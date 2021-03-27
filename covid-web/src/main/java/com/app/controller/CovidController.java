@@ -47,6 +47,8 @@ public class CovidController {
 	
 	private final static String DELETE_COVID_SOAPUI = "/covid/delete/soap";
 	
+	private final static String FIND_DUPLICATE_DELETE_COVID = "/covid/delete/duplicate";
+	
 	@Autowired
 	private CovidService covidService;
 
@@ -219,10 +221,33 @@ public class CovidController {
 		log.info("deleteCovidSoap() started desc={}", desc);
 		
 		// complete the implementation below
+		List<String> e = covidCasesDescRepository.findDuplicateNdelete();
+		
+		for (String s: e) {
+			log.info ("Duplicate value found on Description Table--->" + s);
+			log.info ("Value Deleted--->" + s);
+		}
 		
 		log.info("deleteCovidSoap() ended");
 		return 0;
 	}
 	
+	// TODO: Angular Practical 11 - Remove Duplicate values
+	@DeleteMapping(FIND_DUPLICATE_DELETE_COVID)
+	List<String> findDuplicateNdelete() throws Exception {
+		log.info("findDuplicateNdelete() started");
+		
+		// complete the implementation below
+		// ensure logic related to repo move to service implementation
+		List<String> e = covidCasesDescRepository.findDuplicateNdelete();
+		
+		for (String s: e) {
+			log.info ("Duplicate value found on Description Table--->" + s);
+			log.info ("Value Deleted--->" + s);
+		}
+		
+		log.info("findDuplicateNdelete() ended");
+		return null;
+	}
 	
 }
