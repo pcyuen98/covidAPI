@@ -1,11 +1,8 @@
 package com.app.service.covid.api;
 
-import java.io.IOException;
 import java.text.Format;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -20,12 +17,6 @@ import com.app.mapper.CovidCasesAreaMapper;
 import com.app.model.CovidCasesArea;
 import com.app.model.api.Covid19ApiModel;
 import com.app.repository.covid.CovidCasesRepository;
-import com.app.util.DateTools;
-import com.app.util.ResffulServices;
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.type.CollectionType;
 
 import fr.xebia.extras.selma.Selma;
 import lombok.extern.slf4j.Slf4j;
