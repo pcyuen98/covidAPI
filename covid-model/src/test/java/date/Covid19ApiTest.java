@@ -15,7 +15,7 @@ import com.app.util.ResffulServices;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 
-@Ignore
+@Disabled("")
 class Covid19ApiTest {
 
 	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(DateTools.class);
