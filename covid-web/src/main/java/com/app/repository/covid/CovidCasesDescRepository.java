@@ -19,7 +19,7 @@ public interface CovidCasesDescRepository extends JpaRepository<CovidCasesDescEn
 	int deleteDescWithCondition(String desc);
 	
 	// Complete the JPQL below
-	@Query("SELECT description FROM CovidCasesDescEntity d GROUP BY d.description HAVING COUNT(*) > 1")
+	@Query("SELECT description FROM CovidCasesDescEntity")
 	List<String> findDuplicateNdelete();
 	
 
