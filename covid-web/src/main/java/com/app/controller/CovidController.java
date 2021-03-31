@@ -63,7 +63,7 @@ public class CovidController {
 
 	@GetMapping(GET_LATEST_COVID_FROM_DB)
 	String getLatest() throws Exception {
-		//log.info("getLatest() started");
+		log.info("getLatest() started");
 		String returnString = null;
 
 		try {
@@ -74,7 +74,7 @@ public class CovidController {
 			throw new com.app.error.ControllerException(GET_LATEST_COVID_FROM_DB, e.getMessage());
 		}
 
-		//log.info(GET_LATEST_COVID_FROM_DB + "  return = {}" + returnString);
+		log.info(GET_LATEST_COVID_FROM_DB + "  return = {}" + returnString);
 		return returnString;
 	}
 
@@ -116,7 +116,7 @@ public class CovidController {
 
 	@GetMapping(GET_HELLO_API)
 	String getHello() throws Exception {
-		//log.info("getHello() started");
+		log.info("getHello() started");
 
 		return "Hello API....";
 	}
