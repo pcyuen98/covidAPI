@@ -2,7 +2,7 @@
 2. Developing Applications for the Jakarta EE Platform (Angular and Single Page Application)  - 25 - 31 March
 3. Java Performance Tuning and Optimization (Java Collection Class, Web Services, performance Tuning) - 1,2,5 April
 
-# 3 DAYS Java Performance Tuning and Optimization (Java Collection Class, Web Services, performance Tuning)
+# 5 DAYS Java Performance Tuning and Optimization (Java Collection Class, Web Services, performance Tuning)
 
 <p align="center">
 
