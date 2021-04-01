@@ -25,8 +25,14 @@
 
 </b>
 
-# Manual A - Soup UI and Sonar Configuration
+# Manual A - Soup UI  
 https://docs.google.com/document/d/1gbSKelg1gRJUpZm5CCKcMozOsh57Gtb25B5KMaXHlio/edit?usp=sharing
+
+# Manual B - Configure Sonar
+https://docs.google.com/document/d/1lA_aQljd9LMDV35rBG5zcxSgmn4PuhyCn8ZKg-YRZVY/edit#
+
+# Manual C - Centos Basic
+https://docs.google.com/document/d/1lA_aQljd9LMDV35rBG5zcxSgmn4PuhyCn8ZKg-YRZVY/edit
 
 # Assessment, writing code and Test 
 https://docs.google.com/document/d/1zOfPiveIBS822VMaZi9glybzfMyGDamJRf5m80rOIAg/edit?usp=sharing
