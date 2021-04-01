@@ -15,9 +15,9 @@
 
 1) Performance Test for JEE Covid 19 Microservices applications 	
 					
-2 To clean up the code entirely using Sonar Qube before performance tuning  
+2) To clean up the code entirely using Sonar Qube before performance tuning  
 			
-3 To Utilize Soap UI as performance and functional testing Tools
+3) To Utilize Soap UI as performance and functional testing Tools
 				
 4) To have Centos and troubleshooting skills on Linux server side
 
