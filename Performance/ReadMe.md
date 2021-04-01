@@ -38,3 +38,6 @@ https://teams.microsoft.com/l/meetup-join/19%3ameeting_Y2VmNTIwZDQtOTFmZS00YWE3L
 https://www.soapui.org/docs/functional-testing/validating-messages/getting-started-with-assertions/
 
 https://intersog.com/blog/how-to-use-groovy-scripts-in-soapui-for-test-requests/
+
+# Practical Spreadsheet Updates
+https://docs.google.com/spreadsheets/d/1KtmEnBNoG6VCbFY-vwyTTwWD8x9hgqIG/edit#gid=8489761
