@@ -81,7 +81,7 @@ tail -f covid.log
 How to check postgres DB is running
 telnet localhost 5432
 
-# Appendix
+# Practical SpreadSheet
 Group info
 https://docs.google.com/spreadsheets/d/1KtmEnBNoG6VCbFY-vwyTTwWD8x9hgqIG/edit#gid=1140732679
 
@@ -104,14 +104,6 @@ covidAPI\covid-model\target\classes\com\app\model
 
 # Interview Questions
 https://www.javatpoint.com/software-testing-interview-questions
-
-# Performance Testing
-Performance Test and Assessment 
-https://docs.google.com/document/d/1zOfPiveIBS822VMaZi9glybzfMyGDamJRf5m80rOIAg/edit#heading=h.j3tpl6k8st4z
-
-Manual A
-https://docs.google.com/document/d/1gbSKelg1gRJUpZm5CCKcMozOsh57Gtb25B5KMaXHlio/edit
-
 
 # Soap UI
 https://www.soapui.org/docs/functional-testing/validating-messages/getting-started-with-assertions/

@@ -1,6 +1,6 @@
 1. Architect Enterprise Applications with Jakarta EE (Microservices with Spring Boot) - 15-19 March
 2. Developing Applications for the Jakarta EE Platform (Angular and Single Page Application)  - 25 - 31 March
-3. Java Performance Tuning and Optimization (Java Collection Class, Web Services, performance Tuning) - 1,2,5 April
+3. Java Performance Tuning and Optimization (Java Collection Class, Web Services, performance Tuning) - 1,2,7 April
 
 # 5 DAYS Java Performance Tuning and Optimization (Java Collection Class, Web Services, performance Tuning)
 
@@ -13,15 +13,15 @@
 
 
 
-1) Performance Test for JEE Covid 19 Microservices applications 
-						
-3) To clean up the code entirely using Sonar Qube before performance tuning ( The Right Sequence)
-				
+1) Performance Test for JEE Covid 19 Microservices applications 	
+					
+2) To clean up the code entirely using Sonar Qube before performance tuning  
+			
 3) To Utilize Soap UI as performance and functional testing Tools
 				
-4) To Utilize Soap UI as functional Testing tools
+4) To have Centos and troubleshooting skills on Linux server side
 
-5) Work in a team by utilizing GitHub and Perform Research & Development	
+5) Work in a team by utilizing GitHub and Perform Research & Development		
 
 </b>
 
@@ -38,3 +38,6 @@ https://teams.microsoft.com/l/meetup-join/19%3ameeting_Y2VmNTIwZDQtOTFmZS00YWE3L
 https://www.soapui.org/docs/functional-testing/validating-messages/getting-started-with-assertions/
 
 https://intersog.com/blog/how-to-use-groovy-scripts-in-soapui-for-test-requests/
+
+# Practical Spreadsheet Updates
+https://docs.google.com/spreadsheets/d/1KtmEnBNoG6VCbFY-vwyTTwWD8x9hgqIG/edit#gid=8489761
