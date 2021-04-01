@@ -116,8 +116,10 @@ public class CovidController {
 
 	@GetMapping(GET_HELLO_API)
 	String getHello() throws Exception {
+		long before = System.currentTimeMillis();
 		log.info("getHello() started");
 
+		log.info(ADD_COVID + " |Performance|" + (System.currentTimeMillis() - before ));
 		return "Hello API....";
 	}
 
