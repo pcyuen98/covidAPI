@@ -119,7 +119,7 @@ public class CovidController {
 		long before = System.currentTimeMillis();
 		log.info("getHello() started");
 
-		log.info(ADD_COVID + " |Performance|" + (System.currentTimeMillis() - before ));
+		log.info(GET_HELLO_API + " |Performance|" + (System.currentTimeMillis() - before ));
 		return "Hello API....";
 	}
 
