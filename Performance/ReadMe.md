@@ -29,7 +29,7 @@
 https://docs.google.com/document/d/1gbSKelg1gRJUpZm5CCKcMozOsh57Gtb25B5KMaXHlio/edit?usp=sharing
 
 # Manual B - Configure Sonar
-https://docs.google.com/document/d/1lA_aQljd9LMDV35rBG5zcxSgmn4PuhyCn8ZKg-YRZVY/edit#
+https://docs.google.com/document/d/1v18056zN4FaZaNZjmXjVJUCECGr_zvWZ9z0DeTiwF6M/edit#
 
 # Manual C - Centos Basic
 https://docs.google.com/document/d/1lA_aQljd9LMDV35rBG5zcxSgmn4PuhyCn8ZKg-YRZVY/edit
