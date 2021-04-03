@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +27,7 @@ import com.app.service.covid.api.CovidMiningAPITotalCases;
 import fr.xebia.extras.selma.Selma;
 import lombok.extern.slf4j.Slf4j;
 
+@Transactional
 @RestController
 @Slf4j
 public class CovidController {
@@ -55,6 +58,7 @@ public class CovidController {
 	@Autowired
 	private CovidCasesRepository covidCasesRepository;
 
+	
 	@Autowired
 	private CovidCasesDescRepository covidCasesDescRepository;
 
@@ -142,6 +146,7 @@ public class CovidController {
 	// Move the logic below under try/catch area to CovidServiceImpl
 	// check out the remarks of "TODO: Practical 4 " on CovidServiceImpl
 	@GetMapping(ADD_COVID)
+	@Transactional
 	CovidCasesDesc addCovid(@RequestParam(required = true) String desc) throws Exception {
 		log.info("addCovid() started={}", desc);
 
@@ -223,15 +228,10 @@ public class CovidController {
 		log.info("deleteCovidSoap() started desc={}", desc);
 		
 		// complete the implementation below
-		List<String> e = covidCasesDescRepository.findDuplicateNdelete();
+		int i = covidCasesDescRepository.deleteDescWithCondition(desc);
 		
-		for (String s: e) {
-			log.info ("Duplicate value found on Description Table--->" + s);
-			log.info ("Value Deleted--->" + s);
-		}
-		
-		log.info("deleteCovidSoap() ended");
-		return 0;
+		log.info("deleteCovidSoap() i={}", i);
+		return i;
 	}
 	
 	// TODO: Angular Practical 11 - Remove Duplicate values

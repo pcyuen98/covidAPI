@@ -8,6 +8,7 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -115,8 +116,10 @@ public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 	}
 
 	@Override
+	@Cacheable(value="listLast2Records")
 	public String getTotalfromDB() throws Exception {
 		//log.info("getTotalfromDB starts. ");
+		slowQuery(2000L);
 		List<CovidCasesAreaEntity> casesEntities = covidCasesRepository.listLast2Records();
 		//log.info("getTotalfromDB casesEntities size ={} ", casesEntities.size());
 
@@ -146,4 +149,13 @@ public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 		//log.info("getTotalfromDB ends.  totalCases = {} date={}", totalCases, date);
 		return "Total Cases " + totalCases + " (" + date + ")";
 	}
+	
+	  private void slowQuery(long seconds){
+	        try {
+	        	log.info("sleeping");
+	                Thread.sleep(seconds);
+	            } catch (InterruptedException e) {
+	                throw new IllegalStateException(e);
+	            }
+	    }
 }

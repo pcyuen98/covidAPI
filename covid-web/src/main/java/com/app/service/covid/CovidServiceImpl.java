@@ -33,6 +33,7 @@ public class CovidServiceImpl implements CovidService {
 	CovidCasesDescRepository covidCasesDescRepository;
 
 	@Override
+	
 	public List<CovidCasesArea> getCovid() {
 		log.info("getCovid started");
 		
