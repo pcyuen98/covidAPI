@@ -164,7 +164,7 @@ public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 			if (!isDuplicate(covidCasesAreaEntities, covid19ApiModel)) {
 				log.info("updateDB this record. covid19ApiModel date={}" + covid19ApiModel.getDate());
 				Date date = DateTools.convertDate(covid19ApiModel.getDate(), API_DATE_FORMAT);
-				LocalDate localDate  = DateTools.convertToLocalDate(date);
+				LocalDate localDate = DateTools.convertToLocalDate(date);
 				covidCasesAreaEntity.setDate(localDate);
 				covidCasesRepository.save(covidCasesAreaEntity);
 			}
@@ -201,7 +201,7 @@ public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 
 		// TODO: Practical bonus 3:
 
-		//Pageable page = PageRequest.of(0, size);
+		// Pageable page = PageRequest.of(0, size);
 		// List<CovidCasesAreaEntity> list =
 		// covidCasesRepository.listLast5RecordsHQL(page);
 
@@ -219,10 +219,10 @@ public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 	@Override
 	@Cacheable(value = "getTotalfromDB")
 	public String getTotalfromDB() throws Exception {
-		// log.info("getTotalfromDB starts. ");
-		slowQuery(2000L);
+		log.info("getTotalfromDB starts. ");
+
 		List<CovidCasesAreaEntity> casesEntities = covidCasesRepository.listLast2Records();
-		// log.info("getTotalfromDB casesEntities size ={} ", casesEntities.size());
+		log.info("getTotalfromDB casesEntities size ={} ", casesEntities.size());
 
 		int totalCases = 0;
 		String date = "";
@@ -230,18 +230,13 @@ public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 			List<Covid19ApiModel> covidApiModels = new ArrayList<Covid19ApiModel>();
 
 			CovidCasesAreaEntity covidCasesAreaEntity = casesEntities.get(1);
-			// log.info("getTotalfromDB Last covidCasesAreaEntity date={}, cases={}",
-			// covidCasesAreaEntity.getDate(),
-			// covidCasesAreaEntity.getCases());
 
 			Covid19ApiModel covid19ApiModel = new Covid19ApiModel();
 			covid19ApiModel.setCases(covidCasesAreaEntity.getCases());
 			covidApiModels.add(covid19ApiModel);
 
 			covidCasesAreaEntity = casesEntities.get(0);
-			// log.info("getTotalfromDB covidCasesAreaEntity date={}, cases={}",
-			// covidCasesAreaEntity.getDate(),
-			// covidCasesAreaEntity.getCases());
+
 			date = covidCasesAreaEntity.getDate().toString();
 			covid19ApiModel = new Covid19ApiModel();
 			covid19ApiModel.setCases(covidCasesAreaEntity.getCases());
@@ -253,12 +248,4 @@ public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 		return "Total Cases " + totalCases + " (" + date + ")";
 	}
 
-	private void slowQuery(long seconds) {
-		try {
-			log.info("sleeping here................");
-			Thread.sleep(seconds);
-		} catch (InterruptedException e) {
-			throw new IllegalStateException(e);
-		}
-	}
 }
