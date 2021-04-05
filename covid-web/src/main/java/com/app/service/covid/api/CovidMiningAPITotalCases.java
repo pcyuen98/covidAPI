@@ -11,4 +11,6 @@ public interface CovidMiningAPITotalCases {
 	String getTotalfromDB() throws Exception;
 
 	List<CovidCasesArea> getLast5RecordsMYWithSize(int size) throws Exception;
+
+	String doMining() throws Exception;
 }
