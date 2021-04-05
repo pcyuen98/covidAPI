@@ -56,13 +56,6 @@ public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 
 		List<Covid19ApiModel> covid19ApiModels = convertToObjects(json);
 
-		for (Covid19ApiModel covid19ApiModel : covid19ApiModels) {
-
-			if (covid19ApiModel.getCases() == 283569) {
-				covid19ApiModel.setCases(285716);
-			}
-		}
-
 		updateDB(covid19ApiModels);
 
 		int totalCases = getCasesDifferent(covid19ApiModels);

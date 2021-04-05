@@ -31,7 +31,7 @@ public class MyCovidController {
 		String strReturn = null;
 
 		try {
-		
+			covidMiningAPITotalCases.doMining();
 			strReturn = covidMiningAPITotalCases.getTotalfromDB();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
