@@ -13,7 +13,7 @@ import java.nio.charset.StandardCharsets;
 
 public class ResffulServices {
 
-	public static String GetServices(String URL) throws IOException{
+	public static String getServices(String URL) throws IOException {
 
 		URL url;
 		StringBuilder textBuilder = new StringBuilder();
@@ -21,8 +21,7 @@ public class ResffulServices {
 		url = new URL(URL);
 
 		HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-		try {
-			InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+		try (InputStream in = new BufferedInputStream(urlConnection.getInputStream());) {
 
 			try (Reader reader = new BufferedReader(
 					new InputStreamReader(in, Charset.forName(StandardCharsets.UTF_8.name())))) {
@@ -31,11 +30,9 @@ public class ResffulServices {
 					textBuilder.append((char) c);
 				}
 			}
-		} 
-		catch(Exception e) {
+		} catch (Exception e) {
 			throw new IOException(e);
-		}
-		finally {
+		} finally {
 			urlConnection.disconnect();
 		}
 

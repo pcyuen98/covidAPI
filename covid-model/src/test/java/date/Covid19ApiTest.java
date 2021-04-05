@@ -47,7 +47,7 @@ class Covid19ApiTest {
 		urlBuffer.append(stringDate1DayBefore);
 
 		log.info("urlBuffer = {} ", urlBuffer.toString());
-		String json = ResffulServices.GetServices(urlBuffer.toString());
+		String json = ResffulServices.getServices(urlBuffer.toString());
 		log.info("json = {} ", json);
 
 		ObjectMapper mapper = new ObjectMapper();
