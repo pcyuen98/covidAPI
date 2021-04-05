@@ -47,3 +47,6 @@ https://intersog.com/blog/how-to-use-groovy-scripts-in-soapui-for-test-requests/
 
 # Practical Spreadsheet Updates
 https://docs.google.com/spreadsheets/d/1KtmEnBNoG6VCbFY-vwyTTwWD8x9hgqIG/edit#gid=8489761
+
+# Presentation Slide
+https://drive.google.com/file/d/1GVl2jg2Me-8Jgs8ZZTY47T5bcR1zadPf/view?usp=sharing
