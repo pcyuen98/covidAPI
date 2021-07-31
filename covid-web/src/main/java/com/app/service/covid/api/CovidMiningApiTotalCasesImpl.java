@@ -210,7 +210,7 @@ public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 	}
 
 	@Override
-	@Cacheable(value = "getTotalfromDB")
+	//@Cacheable(value = "getTotalfromDB")
 	public String getTotalfromDB() throws Exception {
 		log.info("getTotalfromDB starts. ");
 
