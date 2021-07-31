@@ -1,6 +1,6 @@
 1. Architect Enterprise Applications with Jakarta EE (Microservices with Spring Boot) - 15-19 March
 2. Developing Applications for the Jakarta EE Platform (Angular and Single Page Application)  - 25 - 31 March
-3. Java Performance Tuning and Optimization (Java Collection Class, Web Services, performance Tuning) - 1,2,7 April
+3. Java Performance Tuning and Optimization (Java Collection Class, Web Services, performance Tuning) - 1 - 7 April
 
 # 5 DAYS Java Performance Tuning and Optimization (Java Collection Class, Web Services, performance Tuning)
 
