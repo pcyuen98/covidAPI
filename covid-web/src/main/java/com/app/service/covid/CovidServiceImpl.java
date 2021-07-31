@@ -31,7 +31,7 @@ public class CovidServiceImpl implements CovidService {
 	
 	@Autowired
 	CovidCasesDescRepository covidCasesDescRepository;
-
+	
 	@Override
 	
 	public List<CovidCasesArea> getCovid() {
