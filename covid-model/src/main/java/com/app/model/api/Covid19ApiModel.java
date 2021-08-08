@@ -10,9 +10,9 @@ import lombok.Setter;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Covid19ApiModel {
 
-	String Country;
+	public String Country;
 
-	String Date;
+	public String Date;
 	
-	int Cases;
+	public int Cases;
 }
