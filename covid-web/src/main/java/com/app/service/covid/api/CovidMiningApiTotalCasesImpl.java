@@ -5,6 +5,7 @@ import java.text.Format;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -126,7 +127,12 @@ public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 		for (CovidCasesAreaEntity covidCasesAreaEntity : covidCasesAreaEntities) {
 
 			Format formatter = new SimpleDateFormat(API_DATE_FORMAT);
-			String convertedDate = formatter.format(covidCasesAreaEntity.getDate());
+			
+			LocalDate localDate = LocalDate.of(2016, 8, 19);
+			ZoneId defaultZoneId = ZoneId.systemDefault();
+			Date convertedDateObj = Date.from(localDate.atStartOfDay(defaultZoneId).toInstant());
+			
+			String convertedDate = formatter.format(convertedDateObj);
 
 			log.info("api date='{}' , entity date='{}' , cases = {}", covid19ApiModel.getDate(), convertedDate,
 					covidCasesAreaEntity.getCases());
@@ -141,6 +147,15 @@ public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 		}
 		log.info("isDuplicate Ends. nothing Duplicated here");
 		return false;
+	}
+	
+	public static void main(String args[]) {
+		String date = "2021-07-29T00:00:00Z";
+		Format formatter = new SimpleDateFormat(API_DATE_FORMAT);
+		LocalDate localDate = LocalDate.of(2016, 8, 19);
+		ZoneId defaultZoneId = ZoneId.systemDefault();
+		Date date2 = Date.from(localDate.atStartOfDay(defaultZoneId).toInstant());
+		String convertedDate = formatter.format(date2);
 	}
 
 	private void updateDB(List<Covid19ApiModel> covid19ApiModels) throws ParseException {
