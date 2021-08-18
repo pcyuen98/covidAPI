@@ -73,6 +73,9 @@ http://localhost:8091/covid/mining/my
 Get Last 5 Records
 http://localhost:8081/covid/get5/my
 
+Get Last 5 Records with parameters
+http://localhost:8081/covid/get5/withsize?size=2
+
 # Useful Debugging Command
 
 How to tail a log file
