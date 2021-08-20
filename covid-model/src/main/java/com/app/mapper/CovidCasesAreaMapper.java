@@ -24,7 +24,7 @@ public interface CovidCasesAreaMapper {
 	public CovidCasesArea asResource(CovidCasesAreaEntity covidCasesAreaEntity);
 	
 	// TODO: Practical Bonus advance 1
-	// implement the for loop below to return covidCasesAreas..
+	// implement the for loop below to return covidCasesAreas.
 	public static List<CovidCasesArea> asResources(List<CovidCasesAreaEntity> covidCaseEntities) {
 		List<CovidCasesArea> covidCasesAreas = new ArrayList<CovidCasesArea>();
 		if (covidCaseEntities == null) {
