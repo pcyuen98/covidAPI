@@ -37,6 +37,9 @@ public class CovidServiceImpl implements CovidService {
 	public List<CovidCasesArea> getCovid() {
 		log.info("getCovid started");
 		
+		// TODO: Practical Bonus advance 1
+		// move the code to CovidCasesAreaMapper to promote loose coupling and enhance re-usability 
+		// of mapping of list entitie(s) and resource(s)
 		CovidCasesAreaMapper mapper = Selma.builder(CovidCasesAreaMapper.class).build();
 		List<CovidCasesAreaEntity> covidCaseEntities = covidCasesRepository.findAll();
 		List<CovidCasesArea> covidCasesAreaList = new ArrayList<CovidCasesArea>();

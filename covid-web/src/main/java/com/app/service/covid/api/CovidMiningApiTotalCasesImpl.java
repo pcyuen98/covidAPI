@@ -128,7 +128,7 @@ public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 
 			Format formatter = new SimpleDateFormat(API_DATE_FORMAT);
 			
-			LocalDate localDate = LocalDate.of(2016, 8, 19);
+			LocalDate localDate = covidCasesAreaEntity.getDate();
 			ZoneId defaultZoneId = ZoneId.systemDefault();
 			Date convertedDateObj = Date.from(localDate.atStartOfDay(defaultZoneId).toInstant());
 			
@@ -147,15 +147,6 @@ public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 		}
 		log.info("isDuplicate Ends. nothing Duplicated here");
 		return false;
-	}
-	
-	public static void main(String args[]) {
-		String date = "2021-07-29T00:00:00Z";
-		Format formatter = new SimpleDateFormat(API_DATE_FORMAT);
-		LocalDate localDate = LocalDate.of(2016, 8, 19);
-		ZoneId defaultZoneId = ZoneId.systemDefault();
-		Date date2 = Date.from(localDate.atStartOfDay(defaultZoneId).toInstant());
-		String convertedDate = formatter.format(date2);
 	}
 
 	private void updateDB(List<Covid19ApiModel> covid19ApiModels) throws ParseException {
