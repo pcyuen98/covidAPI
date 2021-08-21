@@ -32,7 +32,7 @@ public interface CovidCasesAreaMapper {
 		} else {
 
 			for (CovidCasesAreaEntity covidCasesEntity : covidCaseEntities) {
-				// /
+				// 
 			}
 		}
 
