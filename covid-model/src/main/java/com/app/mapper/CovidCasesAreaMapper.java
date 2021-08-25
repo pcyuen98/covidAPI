@@ -23,19 +23,15 @@ public interface CovidCasesAreaMapper {
 	@Maps(withIgnoreFields = "country")
 	public CovidCasesArea asResource(CovidCasesAreaEntity covidCasesAreaEntity);
 	
-	// TODO: Practical Bonus advance 1
-	// implement the for loop below to return covidCasesAreas.
-	public static List<CovidCasesArea> asResources(List<CovidCasesAreaEntity> covidCaseEntities) {
-		List<CovidCasesArea> covidCasesAreas = new ArrayList<CovidCasesArea>();
-		if (covidCaseEntities == null) {
-			throw new IDNotFoundException(0L);
-		} else {
-
-			for (CovidCasesAreaEntity covidCasesEntity : covidCaseEntities) {
-				// 
-			}
-		}
-
-		return covidCasesAreas;
-	}
+	/*
+	 * // TODO: Practical Bonus advance 1 // implement the for loop below to return
+	 * covidCasesAreas. public static List<CovidCasesArea>
+	 * asResources(List<CovidCasesAreaEntity> covidCaseEntities) {
+	 * List<CovidCasesArea> covidCasesAreas = new ArrayList<CovidCasesArea>(); if
+	 * (covidCaseEntities == null) { throw new IDNotFoundException(0L); } else {
+	 * 
+	 * for (CovidCasesAreaEntity covidCasesEntity : covidCaseEntities) { // } }
+	 * 
+	 * return covidCasesAreas; }
+	 */
 }
