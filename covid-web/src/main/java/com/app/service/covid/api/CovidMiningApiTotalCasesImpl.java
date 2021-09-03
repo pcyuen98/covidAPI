@@ -15,6 +15,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.app.config.GlobalConstants;
 import com.app.entity.CovidCasesAreaEntity;
 import com.app.mapper.CovidCasesAreaMapper;
 import com.app.model.CovidCasesArea;
@@ -34,7 +35,6 @@ import lombok.extern.slf4j.Slf4j;
 @Transactional
 @Slf4j
 public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
-	private final static String URL = "https://api.covid19api.com/total/country/malaysia/status/confirmed?from=";
 
 	private final static String API_DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss'Z'";
 
@@ -93,7 +93,7 @@ public class CovidMiningApiTotalCasesImpl implements CovidMiningAPITotalCases {
 		log.info("stringDate1DayBefore = {} ", stringDate1DayBefore);
 		log.info("stringDate2DayBefore = {} ", stringDate3DayBefore);
 
-		urlBuffer.append(URL);
+		urlBuffer.append(GlobalConstants.COVID_API_URL);
 
 		urlBuffer.append(stringDate3DayBefore);
 		urlBuffer.append("&to=");

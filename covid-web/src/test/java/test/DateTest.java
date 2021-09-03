@@ -1,6 +1,6 @@
-package date;
+package test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertNotNull;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -8,10 +8,10 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
+import org.junit.Ignore;
+import org.junit.Test;
 
-@Disabled
+@Ignore
 class DateTest {
 
 	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(DateTest.class);
@@ -46,17 +46,17 @@ class DateTest {
 
 		assertNotNull(date);
 	}
-	
+
 	@Test
 	void testConvertDateFormat() throws ParseException {
 		String dateString = "2020-12-19T00:00:00Z";
-	
+
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-		
+
 		Date date = simpleDateFormat.parse(dateString);
-		
-		log.info("testConvertDateFormat ends. date ={}" , date);
-		
+
+		log.info("testConvertDateFormat ends. date ={}", date);
+
 		assertNotNull(date);
 	}
 }

@@ -1,12 +1,12 @@
-package date;
+package test;
 
 import static org.junit.Assert.assertTrue;
 
 import java.util.Date;
 import java.util.List;
 
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
+import org.junit.Ignore;
+import org.junit.Test;
 
 import com.app.model.api.Covid19ApiModel;
 import com.app.util.DateTools;
@@ -14,14 +14,14 @@ import com.app.util.ResffulServices;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 
-@Disabled("")
+@Ignore
 class Covid19ApiTest {
 
 	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(DateTools.class);
 
 	private final static String URL = "https://api.covid19api.com/total/country/malaysia/status/confirmed?from=";
 
-	@Disabled("")
+	@Ignore
 	@Test
 	void testURL() throws Exception {
 		StringBuffer urlBuffer = new StringBuffer();
