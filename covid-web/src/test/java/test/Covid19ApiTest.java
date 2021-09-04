@@ -25,7 +25,7 @@ class Covid19ApiTest {
 	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(DateTools.class);
 
 	@Test
-	public void getHello() throws Exception {
+	public void testExternalAPIURL() throws Exception {
 
 		TestRestTemplate testRestTemplate = new TestRestTemplate();
 
