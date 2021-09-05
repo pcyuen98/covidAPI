@@ -21,6 +21,11 @@ import lombok.extern.slf4j.Slf4j;
 // Unit Test Reference 
 // https://stackabuse.com/how-to-test-a-spring-boot-application/
 
+//TODO: Practical Advance 
+// Research to read from 
+// 1. json in a text file
+// 2. convert into pojo 
+
 @RunWith(SpringRunner.class)
 @Slf4j
 @SpringBootTest
