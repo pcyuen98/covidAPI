@@ -19,7 +19,7 @@ import com.app.util.ResffulServices;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 
-class Covid19ApiTest {
+public class Covid19ApiTest {
 
 	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(DateTools.class);
 
@@ -35,7 +35,7 @@ class Covid19ApiTest {
 
 	@Ignore
 	@Test
-	void testURL() throws Exception {
+	public void testURL() throws Exception {
 		StringBuffer urlBuffer = new StringBuffer();
 
 		String defaultTime = "T00:00:00Z";
