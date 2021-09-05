@@ -2,6 +2,8 @@ package test;
 
 import static org.junit.Assert.assertNotNull;
 
+import java.util.Arrays;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +30,17 @@ public class CovidServicesTest {
 	
 	@Test
 	public void contextLoads() {
-		log.info("context ={} ", context);
+		
+		String[] beanNames = context.getBeanDefinitionNames();
+		Arrays.sort(beanNames);
+		for (String beanName : beanNames) {
+
+			if (beanName.indexOf("covid") > -1) {
+				log.info("configured service name:={}", beanName);
+			}
+
+		}
+		
 	}
 
 	@Test
