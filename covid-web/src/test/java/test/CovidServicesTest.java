@@ -10,16 +10,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.app.service.covid.CovidService;
 
 import lombok.extern.slf4j.Slf4j;
 
+// Unit Test Reference 
+// https://stackabuse.com/how-to-test-a-spring-boot-application/
+
 @RunWith(SpringRunner.class)
 @Slf4j
 @SpringBootTest
 @SpringBootApplication(scanBasePackages = {"com"})
+@ActiveProfiles(profiles = "unitTest")
+@PropertySource("classpath:applicationUnitTest.properties")
 public class CovidServicesTest {
 
 	@Autowired
