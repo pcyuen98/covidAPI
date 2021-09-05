@@ -38,9 +38,7 @@ public class CovidServicesTest {
 			if (beanName.indexOf("covid") > -1) {
 				log.info("configured service name:={}", beanName);
 			}
-
 		}
-		
 	}
 
 	@Test
