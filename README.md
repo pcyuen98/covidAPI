@@ -76,6 +76,9 @@ http://localhost:8081/covid/get5/my
 Get Last 5 Records with parameters
 http://localhost:8081/covid/get5/withsize?size=2
 
+Roll Back Transaction
+http://localhost:8081/covid/rollback
+
 # Useful Debugging Command
 
 How to tail a log file
