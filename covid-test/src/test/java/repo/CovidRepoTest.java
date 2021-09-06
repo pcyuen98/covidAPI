@@ -51,15 +51,6 @@ public class CovidRepoTest {
 
 	@Test
 	public void covidCasesDescRepositoryTest() throws Exception {
-		CovidCasesDescEntity covidCasesDescEntity = new CovidCasesDescEntity();
-		covidCasesDescEntity.setId(99l);
-		covidCasesDescEntity.setDescription("test.....12266667799976");
-		covidCasesDescRepository.save(covidCasesDescEntity);
-		try {
-			saveTest();
-		} catch (Exception e) {
-			log.info("exception thrown");
-		}
 
 		assertNotNull(covidCasesDescRepository);
 	}
