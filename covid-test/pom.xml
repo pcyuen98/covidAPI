@@ -3,11 +3,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<!-- CY -Remark 2 -->
+	<groupId>com.app</groupId>
 	<artifactId>covid-test</artifactId>
 	<packaging>jar</packaging>
 	<name>covid-test</name>
-	<version>0.2</version>
+	<version>0.2-SNAPSHOT</version>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -18,7 +18,6 @@
 
 
 	<dependencies>
-
 
 		<!-- lombok -->
 		<dependency>
@@ -50,12 +49,6 @@
 			<version>0.2-SNAPSHOT</version>
 		</dependency>
 
-		<dependency>
-			<groupId>com.app</groupId>
-			<artifactId>covid-web</artifactId>
-			<version>0.2-SNAPSHOT</version>
-		</dependency>
-		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-log4j2</artifactId>
@@ -143,7 +136,27 @@
 					</execution>
 				</executions>
 			</plugin>
-
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<executable>true</executable>
+					<addResources>true</addResources>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+						<configuration>
+							<classifier>spring-boot</classifier>
+							<mainClass>
+								com.bayi.StartBayiApplication
+							</mainClass>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 
 		</plugins>
 

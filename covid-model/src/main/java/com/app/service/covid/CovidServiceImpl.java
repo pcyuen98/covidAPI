@@ -19,12 +19,11 @@ import com.app.repository.covid.CovidCasesDescRepository;
 import com.app.repository.covid.CovidCasesRepository;
 
 import fr.xebia.extras.selma.Selma;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
-@Transactional
+@Slf4j
 public class CovidServiceImpl implements CovidService {
-
-	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(CovidServiceImpl.class);
 
 	@Autowired
 	CovidCasesRepository covidCasesRepository;
@@ -32,8 +31,7 @@ public class CovidServiceImpl implements CovidService {
 	@Autowired
 	CovidCasesDescRepository covidCasesDescRepository;
 	
-	@Override
-	
+	@Override	
 	public List<CovidCasesArea> getCovid() {
 		log.info("getCovid started");
 		
@@ -83,6 +81,7 @@ public class CovidServiceImpl implements CovidService {
 	
 	// TODO: Related to Practical 4 (Add)
 	@Override
+	@Transactional
 	public CovidCasesDesc addCovid(String desc) {
 		log.info("addCovid started");
 		

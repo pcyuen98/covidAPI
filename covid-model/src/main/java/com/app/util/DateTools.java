@@ -11,6 +11,8 @@ public class DateTools {
 
 	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(DateTools.class);
 
+	private final static String API_DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss'Z'";
+	
 	private DateTools() {
 		    throw new IllegalStateException("Utility class");
 		  }
@@ -37,6 +39,18 @@ public class DateTools {
 
 	}
 
+	public static String getDefaultDate() {
+
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(API_DATE_FORMAT);
+		
+		String stringDate = simpleDateFormat.format(new Date());
+
+		log.info("getDefaultDate ={} ", stringDate);
+
+		return stringDate;
+
+	}
+	
 	public static Date convertDate(String dateString, String defaultFormat) throws ParseException {
 
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(defaultFormat);

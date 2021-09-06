@@ -31,7 +31,7 @@ import lombok.extern.slf4j.Slf4j;
 @SpringBootTest
 @SpringBootApplication(scanBasePackages = {"com"})
 @ActiveProfiles(profiles = "unitTest")
-@PropertySource("classpath:applicationUnitTest.properties")
+@PropertySource("classpath:application.properties")
 public class CovidServicesTest {
 
 	@Autowired

@@ -104,10 +104,11 @@ public class CovidController {
 		List<CovidCasesArea> covidCasesAreas = null;
 		try {
 			covidCasesAreas = covidService.getCovid();
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			log.error(" findAll() exception " + e.getMessage());
-			throw new Exception(e.getMessage());
+			//throw new Exception(e.getMessage());
 		}
 
 		log.info(GET_COVID + "  return = {}" + covidCasesAreas);
