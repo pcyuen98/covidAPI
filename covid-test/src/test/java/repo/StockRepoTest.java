@@ -51,7 +51,7 @@ public class StockRepoTest {
 	public void testCascadeAllAndDeleteChind() {
 
 		StockEntity stockEntity = insertSingleRecord(new Date().toString());
-		int id = stockEntity.getStockId();
+		long id = stockEntity.getStockId();
 		log.info("inserted ID ----->" + id);
 		List<StockEntity> list = stockRepo.findByStockId(id);
 		log.info("Before Delete Size-->" + list.size());
@@ -61,29 +61,4 @@ public class StockRepoTest {
 		Assert.assertTrue(list.size() == 0);
 	}
 
-	@Test
-	public void testPerformanceInsert() {
-		StockEntity stockEntity = new StockEntity();
-		stockEntity.setStockCode("Code");
-		stockEntity.setStockName(new Date().toString());
-		stockRepo.save(stockEntity);
-		for (int i = 0; i < 1000; i++) {
-
-			StockDailyRecordEntity stockDailyRecordEntity = new StockDailyRecordEntity();
-			stockDailyRecordEntity.setStock(stockEntity);
-			stockDailyRecordEntity.setDesc(new Date().toString());
-			Set<StockDailyRecordEntity> stockDailyRecords = new HashSet<StockDailyRecordEntity>();
-			stockDailyRecords.add(stockDailyRecordEntity);
-			stockDailyReportRepo.save(stockDailyRecordEntity);
-
-		}
-		log.info("Total StockDailyRecordEntity Inserted ----->" + stockDailyReportRepo.findAll().size());
-		
-		log.info("Starting Lazy Search");
-		Set<StockDailyRecordEntity> setLazy = stockEntity.getStockDailyRecords();
-		
-		log.info("Starting Eager Search");
-		Set<StockDailyRecordEntity> setEager = stockEntity.getStockDailyRecords();
-		log.info("testPerformanceInsert ends");
-	}
 }

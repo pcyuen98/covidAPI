@@ -2,8 +2,6 @@ package com.app.advance.entity;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
-import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -29,14 +27,15 @@ public class StockDailyRecordEntity implements java.io.Serializable {
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
-	@Column(name = "RECORD_ID", unique = true, nullable = false)
-	private Integer recordId;
+	@Column(name = "record_id", unique = true, nullable = false)
+	private Long recordId;
 
+	//@ManyToOne(fetch = FetchType.EAGER)
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "STOCK_ID", nullable = false)
-	private StockEntity stock;
+	@JoinColumn(name = "fk_stock_id", nullable = false)
+	private StockEntity stockId;
 	
-	@Column(name = "STOCK_DESC", length = 200)
+	@Column(name = "stock_desc", length = 200)
 	private String desc;
 
 }

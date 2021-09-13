@@ -1,40 +1,34 @@
-package config;
+package com.app;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.core.env.MapPropertySource;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import lombok.extern.slf4j.Slf4j;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-@Configuration
-@ActiveProfiles(profiles = "unitTest")
-@SpringBootApplication(scanBasePackages = { "com" })
 @Slf4j
+@SpringBootApplication(scanBasePackages = { "com.app.controller", "com.app.repository.covid", "com.app.entity",
+		"com.app.service", "com.app" })
 public class ConfigurationUnitTestLoader {
+	
+	@Autowired
+	ApplicationContext context;
 
-	@EventListener
-	public void handleContextRefreshed(ContextRefreshedEvent event) {
-		printActiveProperties((ConfigurableEnvironment) event.getApplicationContext().getEnvironment());
+	public static void main(String[] args) {
+		ApplicationContext ctx = SpringApplication.run(StartCovidApplication.class, args);
+		printActiveProperties((ConfigurableEnvironment) ctx.getEnvironment());
 	}
 
-	public void printActiveProperties(ConfigurableEnvironment env) {
+	public static void printActiveProperties(ConfigurableEnvironment env) {
 
 		System.out.println("************************* ACTIVE APP PROPERTIES ******************************");
 
@@ -56,25 +50,5 @@ public class ConfigurationUnitTestLoader {
 				});
 		System.out.println("******************************************************************************");
 	}
-
-	@Autowired
-	ApplicationContext context;
-
-	@Test
-	public void contextLoads() {
-
-		String[] beanNames = context.getBeanDefinitionNames();
-		Arrays.sort(beanNames);
-		for (String beanName : beanNames) {
-
-			if (beanName.indexOf("covid") > -1) {
-				log.info("configured service name:={}", beanName);
-			}
-		}
-
-		printActiveProperties((ConfigurableEnvironment) context.getEnvironment());
-	}
-
-
 
 }

@@ -1,8 +1,10 @@
 package repo;
 
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
+
+import javax.transaction.Transactional;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -30,28 +32,23 @@ public class StockRepoPerformance {
 	StockDailyRecordRepo stockDailyReportRepo;
 
 	@Test
+	@Transactional
 	public void testPerformanceInsert() {
 		StockEntity stockEntity = new StockEntity();
 		stockEntity.setStockCode("Code");
 		stockEntity.setStockName(new Date().toString());
-		stockRepo.save(stockEntity);
-		for (int i = 0; i < 1000; i++) {
+		// stockRepo.save(stockEntity);
+		List<StockDailyRecordEntity> stockDailyRecords = new ArrayList<StockDailyRecordEntity>();
+		for (int i = 0; i < 10; i++) {
 
 			StockDailyRecordEntity stockDailyRecordEntity = new StockDailyRecordEntity();
-			stockDailyRecordEntity.setStock(stockEntity);
+			stockDailyRecordEntity.setStockId(stockEntity);
 			stockDailyRecordEntity.setDesc(new Date().toString());
-			Set<StockDailyRecordEntity> stockDailyRecords = new HashSet<StockDailyRecordEntity>();
+
 			stockDailyRecords.add(stockDailyRecordEntity);
-			stockDailyReportRepo.save(stockDailyRecordEntity);
+			// stockDailyReportRepo.save(stockDailyRecordEntity);
 
 		}
-		log.info("Total StockDailyRecordEntity Inserted ----->" + stockDailyReportRepo.findAll().size());
-		stockRepo.save(stockEntity);
-		log.info("Starting Lazy Search");
-		Set<StockDailyRecordEntity> setLazy = stockEntity.getStockDailyRecords();
-		log.info("Starting Lazy Search size ==>" + setLazy.size());
 
-		log.info("Starting Eager Search");
-		log.info("testPerformanceInsert ends");
 	}
 }
