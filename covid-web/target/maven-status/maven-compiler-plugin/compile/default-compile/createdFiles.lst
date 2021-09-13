@@ -1,0 +1,6 @@
+com\app\controller\MyCovidController.class
+com\app\controller\CovidAdvanceController.class
+com\app\controller\CovidController.class
+com\app\StartCovidApplication.class
+com\app\WebConfiguration.class
+com\app\controller\CovidBonusController.class

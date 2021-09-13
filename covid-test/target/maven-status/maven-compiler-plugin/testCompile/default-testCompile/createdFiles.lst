@@ -1,0 +1,6 @@
+common\DateTest.class
+api\Covid19ApiTest.class
+config\ConfigurationUnitTestLoader.class
+common\LombokTest.class
+service\CovidServicesTest.class
+repo\CovidRepoTest.class

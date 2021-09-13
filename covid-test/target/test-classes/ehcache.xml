@@ -1,0 +1,15 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	updateCheck="true"
+	monitoring="autodetect" dynamicConfig="true">
+
+	<!-- <diskStore path="java.io.tmpdir" /> -->
+	<diskStore path="c:\\opt\\cache" />
+
+	<cache name="getTotalfromDB" 
+		maxEntriesLocalHeap="10000"
+	>
+		<persistence strategy="localTempSwap"/>
+	</cache>
+	
+
+</ehcache>

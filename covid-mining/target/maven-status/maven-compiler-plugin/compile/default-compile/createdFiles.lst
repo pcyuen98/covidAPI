@@ -1,0 +1,5 @@
+com\app\mining\service\covid\api\CovidMiningApiTotalCasesImpl.class
+com\app\repository\covid\CovidCasesRepository.class
+com\app\mining\service\covid\api\CovidMiningAPITotalCases.class
+com\app\mining\controller\MyCovidMiningController.class
+com\app\StartCovidAPIMiningApplication.class
