@@ -22,6 +22,7 @@
     <module>covid-model</module>
     <module>covid-mining</module>        
     <module>covid-web</module>
+	<module>covid-test</module>
      
       
   </modules>
