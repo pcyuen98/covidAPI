@@ -23,7 +23,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @SpringBootTest
 
-public class StockRepoPerformance {
+public class StockRepoPerformanceTest {
 
 	@Autowired
 	StockRepo stockRepo;
@@ -36,9 +36,12 @@ public class StockRepoPerformance {
 	public void testPerformanceInsert() {
 		StockEntity stockEntity = new StockEntity();
 		stockEntity.setStockCode("Code");
+		stockEntity.setStockId(System.currentTimeMillis());
 		stockEntity.setStockName(new Date().toString());
-		// stockRepo.save(stockEntity);
+		stockEntity.setStockId(System.currentTimeMillis());
 		List<StockDailyRecordEntity> stockDailyRecords = new ArrayList<StockDailyRecordEntity>();
+		stockEntity = stockRepo.save(stockEntity);
+
 		for (int i = 0; i < 10; i++) {
 
 			StockDailyRecordEntity stockDailyRecordEntity = new StockDailyRecordEntity();
@@ -46,9 +49,26 @@ public class StockRepoPerformance {
 			stockDailyRecordEntity.setDesc(new Date().toString());
 
 			stockDailyRecords.add(stockDailyRecordEntity);
-			// stockDailyReportRepo.save(stockDailyRecordEntity);
+			stockDailyReportRepo.save(stockDailyRecordEntity);
 
 		}
+		stockEntity.setStockDailyRecords(stockDailyRecords);
+		stockEntity = stockRepo.save(stockEntity);
+		log.info("<------  insert ends ------>" + stockEntity.getStockDailyRecords().size());
+
+		stockEntity = stockRepo.findAll().get(0);
+
+		log.info("<------  Starting new Search ------>");
+
+		log.info("fetching childs using get method stockEntity id=" + stockEntity.getStockId());
+
+		log.info("<------  Lazy or Eager Logging Below ------>");
+		List<StockDailyRecordEntity> childs = stockEntity.getStockDailyRecords();
+
+		log.info("child entity size -->" + childs.size());
+
+		StockDailyRecordEntity child = childs.get(0);
+		log.info("child desc-->" + child.getDesc());
 
 	}
 }

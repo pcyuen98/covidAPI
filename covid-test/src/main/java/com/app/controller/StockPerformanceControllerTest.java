@@ -42,7 +42,7 @@ public class StockPerformanceControllerTest {
 
 		log.info("fetching childs using get method stockEntity id=" + stockEntity.getStockId());
 
-		log.info("fetching childs using ----lazy or eager way----");
+		log.info("<------  Lazy or Eager Logging Below ------>");
 		// Hibernate: select stockentit0_.stock_id as stock_id1_6_,
 		// stockentit0_.stock_code as stock_co2_6_, stockentit0_.stock_name as
 		// stock_na3_6_ from trx_stock stockentit0_
@@ -71,7 +71,7 @@ public class StockPerformanceControllerTest {
 		StockDailyRecordEntity child = childs.get(0);
 		log.info("child desc-->" + child.getDesc());
 
-		return "desc-->" + child.getDesc();
+		return "child at position 1 desc-->" + child.getDesc();
 	}
 
 	@Transactional
@@ -95,8 +95,10 @@ public class StockPerformanceControllerTest {
 			stockDailyRecordRepo.save(stockDailyRecordEntity);
 
 		}
+		
+		stockEntity.setStockDailyRecords(stockDailyRecords);
 
-		return "Stock Id inserted->" + stockEntity.getStockId();
+		return "# of child inserted->" + stockEntity.getStockDailyRecords().size();
 	}
 
 }

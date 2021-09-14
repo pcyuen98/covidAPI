@@ -1,17 +1,16 @@
-package repo;
+package com.app.controller;
 
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import javax.transaction.Transactional;
+
 import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.app.advance.entity.StockDailyRecordEntity;
 import com.app.advance.entity.StockEntity;
@@ -20,14 +19,11 @@ import com.app.advance.repo.StockRepo;
 
 import lombok.extern.slf4j.Slf4j;
 
-@RunWith(SpringRunner.class)
+@RestController
 @Slf4j
-@SpringBootTest
-
-public class StockRepoTest {
-
+public class CascadeAllControllerTest {
 	private final static String CASCADE_ALL = "/covid/cascadeall";
-	
+
 	@Autowired
 	StockRepo stockRepo;
 
@@ -50,8 +46,9 @@ public class StockRepoTest {
 		return stockEntity;
 	}
 
+	@Transactional
 	@GetMapping(CASCADE_ALL)
-	public void testCascadeAllAndDeleteChind() {
+	public String testCascadeAllAndDeleteChind() {
 
 		StockEntity stockEntity = insertSingleRecord(new Date().toString());
 		long id = stockEntity.getStockId();
@@ -61,7 +58,6 @@ public class StockRepoTest {
 		stockRepo.delete(stockEntity);
 		list = stockRepo.findByStockId(id);
 		log.info("After Delete Size-->" + list.size());
-		Assert.assertTrue(list.size() == 0);
+		return "child list after deletion, it should be 0 -->" + list.size();
 	}
-
 }
