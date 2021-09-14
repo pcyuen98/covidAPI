@@ -26,6 +26,7 @@ public class ConfigurationUnitTestWeb {
 		printActiveProperties((ConfigurableEnvironment) ctx.getEnvironment());
 	}
 
+	// TODO: advance, move this to util
 	public static void printActiveProperties(ConfigurableEnvironment env) {
 
 		System.out.println("************************* ACTIVE APP PROPERTIES ******************************");

@@ -7,7 +7,6 @@ import java.util.Set;
 
 import javax.transaction.Transactional;
 
-import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
