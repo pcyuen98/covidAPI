@@ -15,7 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @Slf4j
-public class CovidAdvanceControllerTest {
+public class RollBackControllerTest {
 
 	private final static String ADD_COVID_ROLL_BACK = "/covid/rollback";
 

@@ -21,7 +21,7 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @Slf4j
 
-public class StockPerformanceControllerTest {
+public class FetchTypeControllerTest {
 
 	private final static String GET_STOCK = "/stock/get";
 
