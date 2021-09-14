@@ -11,7 +11,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import com.app.advance.entity.StockDailyRecordEntity;
 import com.app.advance.entity.StockEntity;
@@ -26,8 +25,6 @@ import lombok.extern.slf4j.Slf4j;
 
 public class StockRepoTest {
 
-	private final static String CASCADE_ALL = "/covid/cascadeall";
-	
 	@Autowired
 	StockRepo stockRepo;
 
@@ -50,8 +47,8 @@ public class StockRepoTest {
 		return stockEntity;
 	}
 
-	@GetMapping(CASCADE_ALL)
-	public void testCascadeAllAndDeleteChind() {
+	@Test
+	public void testCascadeAllAndDeleteChild() {
 
 		StockEntity stockEntity = insertSingleRecord(new Date().toString());
 		long id = stockEntity.getStockId();

@@ -16,13 +16,13 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @SpringBootApplication(scanBasePackages = { "com.app.controller", "com.app.repository.covid", "com.app.entity",
 		"com.app.service", "com.app" })
-public class ConfigurationUnitTestWeb {
+public class StartUnitTestWeb {
 	
 	@Autowired
 	ApplicationContext context;
 
 	public static void main(String[] args) {
-		ApplicationContext ctx = SpringApplication.run(StartCovidTest.class, args);
+		ApplicationContext ctx = SpringApplication.run(StartUnitTestWeb.class, args);
 		printActiveProperties((ConfigurableEnvironment) ctx.getEnvironment());
 	}
 
