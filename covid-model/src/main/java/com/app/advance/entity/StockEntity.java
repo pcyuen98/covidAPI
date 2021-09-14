@@ -23,6 +23,10 @@ import lombok.Setter;
 
 // https://mkyong.com/hibernate/cascade-jpa-hibernate-annotation-common-mistake/
 
+// Find Example on CascadeType Refresh and Save Update
+// Need a logging to prove the method is working
+// Do Performance test on these 3 type cascade all, refresh and saveUpdate
+
 @Entity
 @Table(name = "trx_stock")
 @Getter

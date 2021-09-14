@@ -20,7 +20,7 @@ import lombok.extern.slf4j.Slf4j;
 @Transactional
 @RestController
 @Slf4j
-
+// https://www.mkyong.com/hibernate/hibernate-cascade-example-save-update-delete-and-delete-orphan/
 public class FetchTypeControllerTest {
 
 	private final static String GET_STOCK = "/stock/get";
